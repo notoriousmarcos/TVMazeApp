@@ -19,6 +19,8 @@
 		777900F826E027CA007C21F2 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900F726E027CA007C21F2 /* Episode.swift */; };
 		777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900F926E0284D007C21F2 /* ScheduleTests.swift */; };
 		777900FC26E0285C007C21F2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900FB26E0285C007C21F2 /* Schedule.swift */; };
+		777900FE26E02B8A007C21F2 /* ShowImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900FD26E02B8A007C21F2 /* ShowImageTests.swift */; };
+		7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900FF26E02DA4007C21F2 /* ShowImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		777900F726E027CA007C21F2 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		777900F926E0284D007C21F2 /* ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
 		777900FB26E0285C007C21F2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		777900FD26E02B8A007C21F2 /* ShowImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageTests.swift; sourceTree = "<group>"; };
+		777900FF26E02DA4007C21F2 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				777900EE26E025D6007C21F2 /* ModelTests.swift */,
 				777900F526E026AA007C21F2 /* EpisodeTests.swift */,
 				777900F926E0284D007C21F2 /* ScheduleTests.swift */,
+				777900FD26E02B8A007C21F2 /* ShowImageTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				777900F226E025F1007C21F2 /* Model.swift */,
 				777900F726E027CA007C21F2 /* Episode.swift */,
 				777900FB26E0285C007C21F2 /* Schedule.swift */,
+				777900FF26E02DA4007C21F2 /* ShowImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
 				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
 				777900FC26E0285C007C21F2 /* Schedule.swift in Sources */,
+				7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */,
 				777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +331,7 @@
 				777900D426E023E2007C21F2 /* TVMazeAppTests.swift in Sources */,
 				777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */,
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
+				777900FE26E02B8A007C21F2 /* ShowImageTests.swift in Sources */,
 				777900F626E026AA007C21F2 /* EpisodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
