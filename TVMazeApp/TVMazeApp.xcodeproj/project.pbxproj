@@ -15,6 +15,8 @@
 		777900DF26E023E2007C21F2 /* TVMazeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900DE26E023E2007C21F2 /* TVMazeAppUITests.swift */; };
 		777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900EE26E025D6007C21F2 /* ModelTests.swift */; };
 		777900F326E025F1007C21F2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900F226E025F1007C21F2 /* Model.swift */; };
+		777900F626E026AA007C21F2 /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900F526E026AA007C21F2 /* EpisodeTests.swift */; };
+		777900F826E027CA007C21F2 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900F726E027CA007C21F2 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		777900E026E023E2007C21F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		777900EE26E025D6007C21F2 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		777900F226E025F1007C21F2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		777900F526E026AA007C21F2 /* EpisodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
+		777900F726E027CA007C21F2 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				777900EE26E025D6007C21F2 /* ModelTests.swift */,
+				777900F526E026AA007C21F2 /* EpisodeTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				777900F226E025F1007C21F2 /* Model.swift */,
+				777900F726E027CA007C21F2 /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
+				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
 				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
 				777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */,
 			);
@@ -309,6 +316,7 @@
 			files = (
 				777900D426E023E2007C21F2 /* TVMazeAppTests.swift in Sources */,
 				777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */,
+				777900F626E026AA007C21F2 /* EpisodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
