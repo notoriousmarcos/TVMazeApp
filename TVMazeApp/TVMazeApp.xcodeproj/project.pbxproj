@@ -17,6 +17,7 @@
 		775AAAE726E1724500770E38 /* HTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAE526E1724500770E38 /* HTTPGetClient.swift */; };
 		775AAAE826E1724500770E38 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAE626E1724500770E38 /* HTTPError.swift */; };
 		775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAEB26E174C700770E38 /* HTTPErrorTests.swift */; };
+		775AAAF126E1791B00770E38 /* MockHTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */; };
 		777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C126E023DF007C21F2 /* TVMazeAppApp.swift */; };
 		777900C426E023DF007C21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C326E023DF007C21F2 /* ContentView.swift */; };
 		777900C626E023E2007C21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C526E023E2007C21F2 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		775AAAE526E1724500770E38 /* HTTPGetClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPGetClient.swift; sourceTree = "<group>"; };
 		775AAAE626E1724500770E38 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		775AAAEB26E174C700770E38 /* HTTPErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorTests.swift; sourceTree = "<group>"; };
+		775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPGetClient.swift; sourceTree = "<group>"; };
 		777900BE26E023DF007C21F2 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777900C126E023DF007C21F2 /* TVMazeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppApp.swift; sourceTree = "<group>"; };
 		777900C326E023DF007C21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,30 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		775AAAED26E178F900770E38 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				775AAAEE26E1790C00770E38 /* Data */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		775AAAEE26E1790C00770E38 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				775AAAEF26E1791B00770E38 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		775AAAEF26E1791B00770E38 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		777900B526E023DF007C21F2 = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +295,7 @@
 		777900D226E023E2007C21F2 /* TVMazeAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				775AAAED26E178F900770E38 /* Mocks */,
 				775AAAE926E174C200770E38 /* Data */,
 				777900EC26E025B6007C21F2 /* Domain */,
 				777900D526E023E2007C21F2 /* Info.plist */,
@@ -609,6 +636,7 @@
 				7738995126E16F0D001AD239 /* DomainErrorTests.swift in Sources */,
 				775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */,
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
+				775AAAF126E1791B00770E38 /* MockHTTPGetClient.swift in Sources */,
 				7779011926E0E5A0007C21F2 /* ShowLinkTests.swift in Sources */,
 				7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */,
 				777900FE26E02B8A007C21F2 /* ShowImageTests.swift in Sources */,
