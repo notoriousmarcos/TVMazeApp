@@ -8,11 +8,6 @@
 import XCTest
 @testable import TVMazeApp
 
-public struct ShowImage: Model {
-    let medium: String
-    let original: String
-}
-
 class ShowImageTests: XCTestCase {
 
     func testShowImage_codable_ShouldEncodeAndDecodeShowImage() throws {
