@@ -9,6 +9,5 @@ import Foundation
 import Combine
 
 public protocol HTTPGetClient {
-    typealias Result = Swift.Result<Codable?, HTTPError>
     func get<ReturnType: Codable>(request: URLRequest) -> AnyPublisher<ReturnType, HTTPError>
 }
