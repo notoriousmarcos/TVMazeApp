@@ -27,6 +27,8 @@
 		7779010826E02F61007C21F2 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010726E02F61007C21F2 /* CountryTests.swift */; };
 		7779010A26E02F8E007C21F2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010926E02F8E007C21F2 /* Country.swift */; };
 		7779010C26E03047007C21F2 /* TVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010B26E03047007C21F2 /* TVNetwork.swift */; };
+		7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010D26E0D918007C21F2 /* RatingTests.swift */; };
+		7779011026E0D971007C21F2 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010F26E0D971007C21F2 /* Rating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		7779010726E02F61007C21F2 /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		7779010926E02F8E007C21F2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		7779010B26E03047007C21F2 /* TVNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetwork.swift; sourceTree = "<group>"; };
+		7779010D26E0D918007C21F2 /* RatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTests.swift; sourceTree = "<group>"; };
+		7779010F26E0D971007C21F2 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 				777900FD26E02B8A007C21F2 /* ShowImageTests.swift */,
 				7779010126E02E0E007C21F2 /* ExternalsTests.swift */,
 				7779010526E02EF4007C21F2 /* TVNetworkTests.swift */,
+				7779010D26E0D918007C21F2 /* RatingTests.swift */,
 				7779010726E02F61007C21F2 /* CountryTests.swift */,
 			);
 			path = Model;
@@ -200,6 +205,7 @@
 				7779010326E02EA6007C21F2 /* Externals.swift */,
 				7779010926E02F8E007C21F2 /* Country.swift */,
 				7779010B26E03047007C21F2 /* TVNetwork.swift */,
+				7779010F26E0D971007C21F2 /* Rating.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			files = (
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
 				7779010426E02EA6007C21F2 /* Externals.swift in Sources */,
+				7779011026E0D971007C21F2 /* Rating.swift in Sources */,
 				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
 				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
 				7779010A26E02F8E007C21F2 /* Country.swift in Sources */,
@@ -355,6 +362,7 @@
 				7779010226E02E0E007C21F2 /* ExternalsTests.swift in Sources */,
 				7779010826E02F61007C21F2 /* CountryTests.swift in Sources */,
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
+				7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */,
 				777900FE26E02B8A007C21F2 /* ShowImageTests.swift in Sources */,
 				777900F626E026AA007C21F2 /* EpisodeTests.swift in Sources */,
 			);
