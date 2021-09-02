@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		663E6063BFD3B44ACBC5B8B1 /* Pods_TVMazeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */; };
+		7738994526E16942001AD239 /* FetchShowByPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994426E16942001AD239 /* FetchShowByPageUseCase.swift */; };
+		7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994626E16A91001AD239 /* FetchShowBySearchTermUseCase.swift */; };
+		7738994926E16AE6001AD239 /* FetchShowByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994826E16AE6001AD239 /* FetchShowByIdUseCase.swift */; };
+		7738994B26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994A26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift */; };
 		777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C126E023DF007C21F2 /* TVMazeAppApp.swift */; };
 		777900C426E023DF007C21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C326E023DF007C21F2 /* ContentView.swift */; };
 		777900C626E023E2007C21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C526E023E2007C21F2 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 		4D2A81164F9563E030909999 /* Pods-TVMazeApp-TVMazeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51B429051723D16568F1C03E /* Pods-TVMazeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		70B757D39DF25D82A50024A0 /* Pods-TVMazeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp/Pods-TVMazeApp.release.xcconfig"; sourceTree = "<group>"; };
+		7738994426E16942001AD239 /* FetchShowByPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchShowByPageUseCase.swift; sourceTree = "<group>"; };
+		7738994626E16A91001AD239 /* FetchShowBySearchTermUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchShowBySearchTermUseCase.swift; sourceTree = "<group>"; };
+		7738994826E16AE6001AD239 /* FetchShowByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchShowByIdUseCase.swift; sourceTree = "<group>"; };
+		7738994A26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEpisodesByShowUseCase.swift; sourceTree = "<group>"; };
 		777900BE26E023DF007C21F2 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777900C126E023DF007C21F2 /* TVMazeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppApp.swift; sourceTree = "<group>"; };
 		777900C326E023DF007C21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +150,17 @@
 				51B429051723D16568F1C03E /* Pods-TVMazeAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7738994326E168B7001AD239 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7738994426E16942001AD239 /* FetchShowByPageUseCase.swift */,
+				7738994626E16A91001AD239 /* FetchShowBySearchTermUseCase.swift */,
+				7738994826E16AE6001AD239 /* FetchShowByIdUseCase.swift */,
+				7738994A26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		777900B526E023DF007C21F2 = {
@@ -234,6 +253,7 @@
 		777900F026E025DE007C21F2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7738994326E168B7001AD239 /* UseCase */,
 				777900F126E025E5007C21F2 /* Model */,
 			);
 			path = Domain;
@@ -490,18 +510,22 @@
 			files = (
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
 				7779010426E02EA6007C21F2 /* Externals.swift in Sources */,
+				7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */,
 				7779011F26E0E627007C21F2 /* ShowLink.swift in Sources */,
 				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
 				7779012126E0E63E007C21F2 /* Show.swift in Sources */,
 				7779011D26E0E60F007C21F2 /* Link.swift in Sources */,
 				7779011026E0D971007C21F2 /* Rating.swift in Sources */,
+				7738994B26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift in Sources */,
 				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
 				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
 				7779010A26E02F8E007C21F2 /* Country.swift in Sources */,
 				7779010C26E03047007C21F2 /* TVNetwork.swift in Sources */,
+				7738994526E16942001AD239 /* FetchShowByPageUseCase.swift in Sources */,
 				777900FC26E0285C007C21F2 /* Schedule.swift in Sources */,
 				7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */,
 				777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */,
+				7738994926E16AE6001AD239 /* FetchShowByIdUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
