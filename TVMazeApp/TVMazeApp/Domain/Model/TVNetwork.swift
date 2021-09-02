@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Network: Model {
+public struct TVNetwork: Model {
     public let id: Int
     public let name: String
     public let country: Country

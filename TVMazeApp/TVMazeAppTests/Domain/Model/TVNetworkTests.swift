@@ -8,11 +8,11 @@
 import XCTest
 @testable import TVMazeApp
 
-class NetworkTests: XCTestCase {
+class TVNetworkTests: XCTestCase {
 
-    func testNetwork_codable_ShouldEncodeAndDecodeNetwork() throws {
+    func testTVNetwork_codable_ShouldEncodeAndDecodeNetwork() throws {
         // Arrange
-        let sut = Network(
+        let sut = TVNetwork(
             id: 1,
             name: "CBS",
             country: Country(
@@ -27,7 +27,7 @@ class NetworkTests: XCTestCase {
             XCTFail("Should return a valid data.")
             return
         }
-        let decodedValue = try decoder.decode(Network.self, from: data)
+        let decodedValue = try decoder.decode(TVNetwork.self, from: data)
 
         // Assert
         XCTAssertEqual(sut, decodedValue)
