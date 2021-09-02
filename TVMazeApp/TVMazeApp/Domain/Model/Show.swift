@@ -8,6 +8,31 @@
 import Foundation
 
 public struct Show: Model {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case url
+        case name
+        case type
+        case language
+        case genres
+        case status
+        case runtime
+        case averageRuntime
+        case premiered
+        case officialSite
+        case schedule
+        case rating
+        case weight
+        case network
+        case webChannel
+        case dvdCountry
+        case externals
+        case image
+        case summary
+        case updated
+        case links = "_links"
+    }
+
     public let id: Int
     public let url: String
     public let name: String

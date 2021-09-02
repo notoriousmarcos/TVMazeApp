@@ -14,11 +14,24 @@ class EpisodeTests: XCTestCase {
         // Arrange
         let sut = Episode(
             id: 1,
-            name: "Episode 1",
+            url: "https://www.tvmaze.com/episodes/1/under-the-dome-1x01-pilot",
+            name: "Pilot",
             number: 1,
             season: 1,
-            summary: "Summary",
-            image: nil
+            type: "regular",
+            airdate: "2013-06-24",
+            airtime: "22:00",
+            airstamp: "2013-06-25T02:00:00+00:00",
+            runtime: 60,
+            summary: "<p>When the residents of Chester's Mill.</p>",
+            image: ShowImage(
+                medium: "https://static.tvmaze.com/uploads/images/medium_landscape/1/4388.jpg",
+                original: "https://static.tvmaze.com/uploads/images/original_untouched/1/4388.jpg"
+            ),
+            links: ShowLink(
+                current: Link(href: "https://api.tvmaze.com/episodes/1"),
+                previousepisode: nil
+            )
         )
         let decoder = JSONDecoder()
 

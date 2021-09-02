@@ -9,5 +9,5 @@ import Foundation
 
 public struct ShowLink: Model {
     public let current: Link
-    public let previousepisode: Link
+    public let previousepisode: Link?
 }
