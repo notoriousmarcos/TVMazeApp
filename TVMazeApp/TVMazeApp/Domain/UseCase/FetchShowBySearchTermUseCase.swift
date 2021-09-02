@@ -8,5 +8,5 @@
 import Combine
 
 public protocol FetchShowBySearchTermUseCase {
-    func execute(searchTerm: String) -> AnyPublisher<[Show], Error>
+    func execute(searchTerm: String) -> AnyPublisher<[Show], DomainError>
 }
