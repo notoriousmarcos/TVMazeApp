@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct Rating: Model{
+public struct Rating: Model {
     public let average: Double
 }

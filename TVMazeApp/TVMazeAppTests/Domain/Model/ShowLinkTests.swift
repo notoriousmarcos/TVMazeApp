@@ -9,7 +9,7 @@ import XCTest
 @testable import TVMazeApp
 
 class ShowLinkTests: XCTestCase {
-    
+
     func testShowLink_codable_ShouldEncodeAndDecodeShowLink() throws {
         // Arrange
         let sut = ShowLink(
@@ -21,16 +21,16 @@ class ShowLinkTests: XCTestCase {
             )
         )
         let decoder = JSONDecoder()
-        
+
         // Act
         guard let data = sut.toData() else {
             XCTFail("Should return a valid data.")
             return
         }
         let decodedValue = try decoder.decode(ShowLink.self, from: data)
-        
+
         // Assert
         XCTAssertEqual(sut, decodedValue)
     }
-    
+
 }
