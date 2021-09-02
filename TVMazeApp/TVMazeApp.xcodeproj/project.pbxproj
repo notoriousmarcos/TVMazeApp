@@ -29,6 +29,8 @@
 		7779010C26E03047007C21F2 /* TVNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010B26E03047007C21F2 /* TVNetwork.swift */; };
 		7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010D26E0D918007C21F2 /* RatingTests.swift */; };
 		7779011026E0D971007C21F2 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779010F26E0D971007C21F2 /* Rating.swift */; };
+		7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779011126E0DE38007C21F2 /* WebChannel.swift */; };
+		7779011526E0DE8E007C21F2 /* WebChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779011426E0DE8E007C21F2 /* WebChannelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		7779010B26E03047007C21F2 /* TVNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNetwork.swift; sourceTree = "<group>"; };
 		7779010D26E0D918007C21F2 /* RatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTests.swift; sourceTree = "<group>"; };
 		7779010F26E0D971007C21F2 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		7779011126E0DE38007C21F2 /* WebChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebChannel.swift; sourceTree = "<group>"; };
+		7779011426E0DE8E007C21F2 /* WebChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebChannelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 				777900FD26E02B8A007C21F2 /* ShowImageTests.swift */,
 				7779010126E02E0E007C21F2 /* ExternalsTests.swift */,
 				7779010526E02EF4007C21F2 /* TVNetworkTests.swift */,
+				7779011426E0DE8E007C21F2 /* WebChannelTests.swift */,
 				7779010D26E0D918007C21F2 /* RatingTests.swift */,
 				7779010726E02F61007C21F2 /* CountryTests.swift */,
 			);
@@ -204,8 +209,9 @@
 				777900FF26E02DA4007C21F2 /* ShowImage.swift */,
 				7779010326E02EA6007C21F2 /* Externals.swift */,
 				7779010926E02F8E007C21F2 /* Country.swift */,
-				7779010B26E03047007C21F2 /* TVNetwork.swift */,
 				7779010F26E0D971007C21F2 /* Rating.swift */,
+				7779010B26E03047007C21F2 /* TVNetwork.swift */,
+				7779011126E0DE38007C21F2 /* WebChannel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			files = (
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
 				7779010426E02EA6007C21F2 /* Externals.swift in Sources */,
+				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
 				7779011026E0D971007C21F2 /* Rating.swift in Sources */,
 				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
 				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
@@ -358,6 +365,7 @@
 			files = (
 				7779010626E02EF4007C21F2 /* TVNetworkTests.swift in Sources */,
 				777900D426E023E2007C21F2 /* TVMazeAppTests.swift in Sources */,
+				7779011526E0DE8E007C21F2 /* WebChannelTests.swift in Sources */,
 				777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */,
 				7779010226E02E0E007C21F2 /* ExternalsTests.swift in Sources */,
 				7779010826E02F61007C21F2 /* CountryTests.swift in Sources */,
