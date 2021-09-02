@@ -8,5 +8,5 @@
 import Combine
 
 public protocol FetchShowByIdUseCase {
-    func execute(id: Int) -> AnyPublisher<[Show], Error>
+    func execute(id: Int) -> AnyPublisher<[Show], DomainError>
 }

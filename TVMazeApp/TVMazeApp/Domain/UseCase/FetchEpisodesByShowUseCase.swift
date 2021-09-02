@@ -8,5 +8,5 @@
 import Combine
 
 public protocol FetchEpisodesByShowUseCase {
-    func execute(show: Show) -> AnyPublisher<[Episode], Error>
+    func execute(show: Show) -> AnyPublisher<[Episode], DomainError>
 }

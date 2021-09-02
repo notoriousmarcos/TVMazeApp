@@ -8,5 +8,5 @@
 import Combine
 
 public protocol FetchShowByPageUseCase {
-    func execute(page: Int) -> AnyPublisher<[Show], Error>
+    func execute(page: Int) -> AnyPublisher<[Show], DomainError>
 }

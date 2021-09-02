@@ -12,6 +12,8 @@
 		7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994626E16A91001AD239 /* FetchShowBySearchTermUseCase.swift */; };
 		7738994926E16AE6001AD239 /* FetchShowByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994826E16AE6001AD239 /* FetchShowByIdUseCase.swift */; };
 		7738994B26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994A26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift */; };
+		7738994E26E16E30001AD239 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738994D26E16E30001AD239 /* DomainError.swift */; };
+		7738995126E16F0D001AD239 /* DomainErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738995026E16F0D001AD239 /* DomainErrorTests.swift */; };
 		777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C126E023DF007C21F2 /* TVMazeAppApp.swift */; };
 		777900C426E023DF007C21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C326E023DF007C21F2 /* ContentView.swift */; };
 		777900C626E023E2007C21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C526E023E2007C21F2 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		7738994626E16A91001AD239 /* FetchShowBySearchTermUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchShowBySearchTermUseCase.swift; sourceTree = "<group>"; };
 		7738994826E16AE6001AD239 /* FetchShowByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchShowByIdUseCase.swift; sourceTree = "<group>"; };
 		7738994A26E16B5A001AD239 /* FetchEpisodesByShowUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEpisodesByShowUseCase.swift; sourceTree = "<group>"; };
+		7738994D26E16E30001AD239 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		7738995026E16F0D001AD239 /* DomainErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainErrorTests.swift; sourceTree = "<group>"; };
 		777900BE26E023DF007C21F2 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777900C126E023DF007C21F2 /* TVMazeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppApp.swift; sourceTree = "<group>"; };
 		777900C326E023DF007C21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +167,22 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		7738994C26E16E19001AD239 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7738994D26E16E30001AD239 /* DomainError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		7738994F26E16EF3001AD239 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7738995026E16F0D001AD239 /* DomainErrorTests.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		777900B526E023DF007C21F2 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +229,7 @@
 		777900D226E023E2007C21F2 /* TVMazeAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				7738994F26E16EF3001AD239 /* Error */,
 				777900EC26E025B6007C21F2 /* Domain */,
 				777900D526E023E2007C21F2 /* Info.plist */,
 			);
@@ -253,6 +274,7 @@
 		777900F026E025DE007C21F2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7738994C26E16E19001AD239 /* Error */,
 				7738994326E168B7001AD239 /* UseCase */,
 				777900F126E025E5007C21F2 /* Model */,
 			);
@@ -513,6 +535,7 @@
 				7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */,
 				7779011F26E0E627007C21F2 /* ShowLink.swift in Sources */,
 				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
+				7738994E26E16E30001AD239 /* DomainError.swift in Sources */,
 				7779012126E0E63E007C21F2 /* Show.swift in Sources */,
 				7779011D26E0E60F007C21F2 /* Link.swift in Sources */,
 				7779011026E0D971007C21F2 /* Rating.swift in Sources */,
@@ -540,6 +563,7 @@
 				7779010226E02E0E007C21F2 /* ExternalsTests.swift in Sources */,
 				7779011B26E0E5AB007C21F2 /* LinkTests.swift in Sources */,
 				7779010826E02F61007C21F2 /* CountryTests.swift in Sources */,
+				7738995126E16F0D001AD239 /* DomainErrorTests.swift in Sources */,
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
 				7779011926E0E5A0007C21F2 /* ShowLinkTests.swift in Sources */,
 				7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */,
