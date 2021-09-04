@@ -10,11 +10,11 @@ import Combine
 import XCTest
 @testable import TVMazeApp
 
-class MockHTTPGetClient: HTTPGetClient {
+class MockHTTPGetClient: HTTPClient {
     var result: Codable?
     var error: HTTPError?
 
-    func get<ReturnType: Codable>(request: URLRequest) -> AnyPublisher<ReturnType, HTTPError> {
+    func dispatch<ReturnType: Codable>(request: URLRequest) -> AnyPublisher<ReturnType, HTTPError> {
         if let result = result as? ReturnType {
             return Just(result)
                 .setFailureType(to: HTTPError.self)
