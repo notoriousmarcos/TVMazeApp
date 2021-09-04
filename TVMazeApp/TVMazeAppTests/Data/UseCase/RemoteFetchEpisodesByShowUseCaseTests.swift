@@ -1,5 +1,5 @@
 //
-//  RemoteFetchShowByPageUseCaseTests.swift
+//  RemoteFetchEpisodesByShowUseCaseTests.swift
 //  TVMazeAppTests
 //
 //  Created by marcos.brito on 03/09/21.
@@ -8,17 +8,17 @@
 import XCTest
 @testable import TVMazeApp
 
-class RemoteFetchShowByPageUseCaseTests: XCTestCase {
+class RemoteFetchEpisodesByShowUseCaseTests: XCTestCase {
 
     let mockClient = MockHTTPClient()
 
-    func testRemoteFetchShowByPageUseCase_executeWithValidData_ShouldReturnShows() {
+    func testRemoteFetchEpisodesByShowUseCase_executeWithValidData_ShouldReturnEpisodes() {
         // Arrange
-        mockClient.result = [MockEntities.show]
-        let sut = RemoteFetchShowByPageUseCase(httpClient: mockClient)
+        mockClient.result = [MockEntities.episode]
+        let sut = RemoteFetchEpisodesByShowUseCase(httpClient: mockClient)
 
         // Act
-        let cancellable = sut.execute(page: 1).sink { result in
+        let cancellable = sut.execute(show: MockEntities.show).sink { result in
             switch result {
                 case .failure:
                     XCTFail("Should Not Fail.")
@@ -27,19 +27,19 @@ class RemoteFetchShowByPageUseCaseTests: XCTestCase {
             }
         } receiveValue: { shows in
             // Assert
-            XCTAssertEqual(shows, [MockEntities.show])
+            XCTAssertEqual(shows, [MockEntities.episode])
         }
 
         cancellable.cancel()
     }
 
-    func testRemoteFetchShowByPageUseCase_executeWithBadRequest_ShouldReturnFetchError() {
+    func testRemoteFetchEpisodesByShowUseCase_executeWithBadRequest_ShouldReturnFetchError() {
         // Arrange
         mockClient.error = HTTPError.badRequest
-        let sut = RemoteFetchShowByPageUseCase(httpClient: mockClient)
+        let sut = RemoteFetchEpisodesByShowUseCase(httpClient: mockClient)
 
         // Act
-        let cancellable = sut.execute(page: 1).sink { result in
+        let cancellable = sut.execute(show: MockEntities.show).sink { result in
             switch result {
                 case .failure(let error):
                     XCTAssertEqual(error, .fetchError)

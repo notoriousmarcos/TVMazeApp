@@ -14,7 +14,7 @@ class RemoteFetchShowBySearchTermUseCaseTests: XCTestCase {
 
     func testRemoteFetchShowBySearchTermUseCase_executeWithValidData_ShouldReturnShows() {
         // Arrange
-        mockClient.result = [MockShow.valid]
+        mockClient.result = [MockEntities.show]
         let sut = RemoteFetchShowBySearchTermUseCase(httpClient: mockClient)
 
         // Act
@@ -27,7 +27,7 @@ class RemoteFetchShowBySearchTermUseCaseTests: XCTestCase {
             }
         } receiveValue: { shows in
             // Assert
-            XCTAssertEqual(shows, [MockShow.valid])
+            XCTAssertEqual(shows, [MockEntities.show])
         }
 
         cancellable.cancel()

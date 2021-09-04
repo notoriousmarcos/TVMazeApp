@@ -60,11 +60,13 @@
 		77E7FDEC26E3B23D00736AC4 /* ShowByIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */; };
 		77E7FDEE26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDED26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift */; };
 		77E7FDF026E3B4B700736AC4 /* EpisodesByShowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDEF26E3B4B700736AC4 /* EpisodesByShowRequest.swift */; };
-		77E7FDF226E3BEEF00736AC4 /* MockShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF126E3BEEF00736AC4 /* MockShow.swift */; };
+		77E7FDF226E3BEEF00736AC4 /* MockEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF126E3BEEF00736AC4 /* MockEntities.swift */; };
 		77E7FDF426E3C0D300736AC4 /* RemoteFetchShowBySearchTermUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF326E3C0D300736AC4 /* RemoteFetchShowBySearchTermUseCaseTests.swift */; };
 		77E7FDF626E3C10F00736AC4 /* RemoteFetchShowBySearchTermUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF526E3C10F00736AC4 /* RemoteFetchShowBySearchTermUseCase.swift */; };
 		77E7FDF826E3C54B00736AC4 /* RemoteFetchShowByIdUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF726E3C54B00736AC4 /* RemoteFetchShowByIdUseCaseTests.swift */; };
 		77E7FDFA26E3C5EB00736AC4 /* RemoteFetchShowByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF926E3C5EB00736AC4 /* RemoteFetchShowByIdUseCase.swift */; };
+		77E7FDFC26E3C7E000736AC4 /* RemoteFetchEpisodesByShowUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDFB26E3C7E000736AC4 /* RemoteFetchEpisodesByShowUseCaseTests.swift */; };
+		77E7FDFE26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDFD26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -150,11 +152,13 @@
 		77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByIdRequest.swift; sourceTree = "<group>"; };
 		77E7FDED26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesByShowRequestTests.swift; sourceTree = "<group>"; };
 		77E7FDEF26E3B4B700736AC4 /* EpisodesByShowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesByShowRequest.swift; sourceTree = "<group>"; };
-		77E7FDF126E3BEEF00736AC4 /* MockShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShow.swift; sourceTree = "<group>"; };
+		77E7FDF126E3BEEF00736AC4 /* MockEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEntities.swift; sourceTree = "<group>"; };
 		77E7FDF326E3C0D300736AC4 /* RemoteFetchShowBySearchTermUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchShowBySearchTermUseCaseTests.swift; sourceTree = "<group>"; };
 		77E7FDF526E3C10F00736AC4 /* RemoteFetchShowBySearchTermUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchShowBySearchTermUseCase.swift; sourceTree = "<group>"; };
 		77E7FDF726E3C54B00736AC4 /* RemoteFetchShowByIdUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchShowByIdUseCaseTests.swift; sourceTree = "<group>"; };
 		77E7FDF926E3C5EB00736AC4 /* RemoteFetchShowByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchShowByIdUseCase.swift; sourceTree = "<group>"; };
+		77E7FDFB26E3C7E000736AC4 /* RemoteFetchEpisodesByShowUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchEpisodesByShowUseCaseTests.swift; sourceTree = "<group>"; };
+		77E7FDFD26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchEpisodesByShowUseCase.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				775AAAEE26E1790C00770E38 /* Data */,
-				77E7FDF126E3BEEF00736AC4 /* MockShow.swift */,
+				77E7FDF126E3BEEF00736AC4 /* MockEntities.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 			children = (
 				77E7FDF326E3C0D300736AC4 /* RemoteFetchShowBySearchTermUseCaseTests.swift */,
 				77E7FDF726E3C54B00736AC4 /* RemoteFetchShowByIdUseCaseTests.swift */,
+				77E7FDFB26E3C7E000736AC4 /* RemoteFetchEpisodesByShowUseCaseTests.swift */,
 				77E7FDD226E2B41100736AC4 /* RemoteFetchShowByPageUseCaseTests.swift */,
 			);
 			path = UseCase;
@@ -428,6 +433,7 @@
 			children = (
 				77E7FDF526E3C10F00736AC4 /* RemoteFetchShowBySearchTermUseCase.swift */,
 				77E7FDF926E3C5EB00736AC4 /* RemoteFetchShowByIdUseCase.swift */,
+				77E7FDFD26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift */,
 				77E7FDD526E2B57200736AC4 /* RemoteFetchShowByPageUseCase.swift */,
 			);
 			path = UseCase;
@@ -694,6 +700,7 @@
 				77E7FDF626E3C10F00736AC4 /* RemoteFetchShowBySearchTermUseCase.swift in Sources */,
 				7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */,
 				7779011F26E0E627007C21F2 /* ShowLink.swift in Sources */,
+				77E7FDFE26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift in Sources */,
 				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
 				7738994E26E16E30001AD239 /* DomainError.swift in Sources */,
 				7779012126E0E63E007C21F2 /* Show.swift in Sources */,
@@ -742,7 +749,8 @@
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
 				775AAAF126E1791B00770E38 /* MockHTTPClient.swift in Sources */,
 				7779011926E0E5A0007C21F2 /* ShowLinkTests.swift in Sources */,
-				77E7FDF226E3BEEF00736AC4 /* MockShow.swift in Sources */,
+				77E7FDF226E3BEEF00736AC4 /* MockEntities.swift in Sources */,
+				77E7FDFC26E3C7E000736AC4 /* RemoteFetchEpisodesByShowUseCaseTests.swift in Sources */,
 				7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */,
 				77E7FDD326E2B41100736AC4 /* RemoteFetchShowByPageUseCaseTests.swift in Sources */,
 				77E7FDEE26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift in Sources */,

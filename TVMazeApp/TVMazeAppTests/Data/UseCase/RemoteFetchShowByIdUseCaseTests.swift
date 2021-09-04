@@ -14,7 +14,7 @@ class RemoteFetchShowByIdUseCaseTests: XCTestCase {
 
     func testRemoteFetchShowByIdUseCase_executeWithValidData_ShouldReturnShow() {
         // Arrange
-        mockClient.result = MockShow.valid
+        mockClient.result = MockEntities.show
         let sut = RemoteFetchShowByIdUseCase(httpClient: mockClient)
 
         // Act
@@ -28,7 +28,7 @@ class RemoteFetchShowByIdUseCaseTests: XCTestCase {
             }
         } receiveValue: { show in
             // Assert
-            XCTAssertEqual(show, MockShow.valid)
+            XCTAssertEqual(show, MockEntities.show)
         }
 
         cancellable.cancel()
