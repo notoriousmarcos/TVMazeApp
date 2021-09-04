@@ -17,7 +17,7 @@
 		775AAAE726E1724500770E38 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAE526E1724500770E38 /* HTTPClient.swift */; };
 		775AAAE826E1724500770E38 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAE626E1724500770E38 /* HTTPError.swift */; };
 		775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAEB26E174C700770E38 /* HTTPErrorTests.swift */; };
-		775AAAF126E1791B00770E38 /* MockHTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */; };
+		775AAAF126E1791B00770E38 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAF026E1791B00770E38 /* MockHTTPClient.swift */; };
 		777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C126E023DF007C21F2 /* TVMazeAppApp.swift */; };
 		777900C426E023DF007C21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C326E023DF007C21F2 /* ContentView.swift */; };
 		777900C626E023E2007C21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C526E023E2007C21F2 /* Assets.xcassets */; };
@@ -60,6 +60,7 @@
 		77E7FDEC26E3B23D00736AC4 /* ShowByIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */; };
 		77E7FDEE26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDED26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift */; };
 		77E7FDF026E3B4B700736AC4 /* EpisodesByShowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDEF26E3B4B700736AC4 /* EpisodesByShowRequest.swift */; };
+		77E7FDF226E3BEEF00736AC4 /* MockShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDF126E3BEEF00736AC4 /* MockShow.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -96,7 +97,7 @@
 		775AAAE526E1724500770E38 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		775AAAE626E1724500770E38 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		775AAAEB26E174C700770E38 /* HTTPErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorTests.swift; sourceTree = "<group>"; };
-		775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPGetClient.swift; sourceTree = "<group>"; };
+		775AAAF026E1791B00770E38 /* MockHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		777900BE26E023DF007C21F2 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777900C126E023DF007C21F2 /* TVMazeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppApp.swift; sourceTree = "<group>"; };
 		777900C326E023DF007C21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByIdRequest.swift; sourceTree = "<group>"; };
 		77E7FDED26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesByShowRequestTests.swift; sourceTree = "<group>"; };
 		77E7FDEF26E3B4B700736AC4 /* EpisodesByShowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesByShowRequest.swift; sourceTree = "<group>"; };
+		77E7FDF126E3BEEF00736AC4 /* MockShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShow.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				775AAAEE26E1790C00770E38 /* Data */,
+				77E7FDF126E3BEEF00736AC4 /* MockShow.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -277,7 +280,7 @@
 		775AAAEF26E1791B00770E38 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				775AAAF026E1791B00770E38 /* MockHTTPGetClient.swift */,
+				775AAAF026E1791B00770E38 /* MockHTTPClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -721,8 +724,9 @@
 				775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */,
 				77E7FDE026E39B2500736AC4 /* RequestTests.swift in Sources */,
 				777900FA26E0284D007C21F2 /* ScheduleTests.swift in Sources */,
-				775AAAF126E1791B00770E38 /* MockHTTPGetClient.swift in Sources */,
+				775AAAF126E1791B00770E38 /* MockHTTPClient.swift in Sources */,
 				7779011926E0E5A0007C21F2 /* ShowLinkTests.swift in Sources */,
+				77E7FDF226E3BEEF00736AC4 /* MockShow.swift in Sources */,
 				7779010E26E0D918007C21F2 /* RatingTests.swift in Sources */,
 				77E7FDD326E2B41100736AC4 /* RemoteFetchShowByPageUseCaseTests.swift in Sources */,
 				77E7FDEE26E3B38A00736AC4 /* EpisodesByShowRequestTests.swift in Sources */,

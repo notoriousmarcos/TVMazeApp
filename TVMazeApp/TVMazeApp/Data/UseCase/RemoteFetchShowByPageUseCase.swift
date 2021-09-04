@@ -10,17 +10,18 @@ import Combine
 
 public class RemoteFetchShowByPageUseCase: FetchShowByPageUseCase {
 
-    private let request: URLRequest
     private let httpClient: HTTPClient
 
-    public init(request: URLRequest, httpClient: HTTPClient) {
-        self.request = request
+    public init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
 
     public func execute(page: Int) -> AnyPublisher<[Show], DomainError> {
-        httpClient.dispatch(request: request).mapError { _ -> DomainError in
-            return .dataNotFound
+        guard let urlRequest = ShowByPageRequest(page: page).asURLRequest() else {
+            return Fail(outputType: [Show].self, failure: DomainError.unknown).eraseToAnyPublisher()
+        }
+        return httpClient.dispatch(request: urlRequest).mapError { _ -> DomainError in
+            return .fetchError
         }.eraseToAnyPublisher()
     }
 }

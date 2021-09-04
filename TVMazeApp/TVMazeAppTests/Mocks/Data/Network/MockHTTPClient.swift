@@ -10,7 +10,7 @@ import Combine
 import XCTest
 @testable import TVMazeApp
 
-class MockHTTPGetClient: HTTPClient {
+class MockHTTPClient: HTTPClient {
     var result: Codable?
     var error: HTTPError?
 

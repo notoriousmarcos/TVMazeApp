@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ShowByIdRequest: Request {
+public struct ShowByIdRequest: Request {
     public typealias ReturnType = Show
 
     public let baseURL: String
@@ -17,7 +17,7 @@ public class ShowByIdRequest: Request {
     public let body: [String: Any]? = nil
     public let headers: [String: String]? = nil
 
-    init(id: Int) {
+    public init(id: Int) {
         baseURL = "https://api.tvmaze.com/shows/\(id)"
     }
 }

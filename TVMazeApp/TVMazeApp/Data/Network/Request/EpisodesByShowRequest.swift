@@ -7,7 +7,7 @@
 
 import Combine
 
-public class EpisodesByShowRequest: Request {
+public struct EpisodesByShowRequest: Request {
     public typealias ReturnType = [Episode]
 
     public let baseURL: String
@@ -17,7 +17,7 @@ public class EpisodesByShowRequest: Request {
     public let body: [String: Any]? = nil
     public let headers: [String: String]? = nil
 
-    init(showId: Int) {
+    public init(showId: Int) {
         baseURL = "https://api.tvmaze.com/shows/\(showId)/episodes"
     }
 }

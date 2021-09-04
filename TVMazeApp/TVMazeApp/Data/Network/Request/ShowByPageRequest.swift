@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ShowByPageRequest: Request {
+public struct ShowByPageRequest: Request {
     public typealias ReturnType = [Show]
 
     public let baseURL: String = "https://api.tvmaze.com/shows"
@@ -17,7 +17,7 @@ public class ShowByPageRequest: Request {
     public let body: [String: Any]? = nil
     public let headers: [String: String]? = nil
 
-    init(page: Int) {
+    public init(page: Int) {
         params = ["page": "\(page)"]
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ShowBySearchRequest: Request {
+public struct ShowBySearchRequest: Request {
     public typealias ReturnType = [Show]
 
     public let baseURL: String = "https://api.tvmaze.com/shows"
@@ -17,7 +17,7 @@ public class ShowBySearchRequest: Request {
     public let body: [String: Any]? = nil
     public let headers: [String: String]? = nil
 
-    init(search: String) {
+    public init(search: String) {
         params = ["q": search]
     }
 }

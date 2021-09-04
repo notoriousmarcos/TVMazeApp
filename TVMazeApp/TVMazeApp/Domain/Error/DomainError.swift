@@ -8,7 +8,7 @@
 import Foundation
 
 public enum DomainError: Int, Error {
-    case invalidUrl = 1
+    case fetchError = 1
     case dataNotFound = 2
     case lastPageAchieved = 3
     case parseFailed = 4
