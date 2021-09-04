@@ -54,6 +54,8 @@
 		77E7FDE026E39B2500736AC4 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDDF26E39B2500736AC4 /* RequestTests.swift */; };
 		77E7FDE226E3A93700736AC4 /* ShowByPageRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE126E3A93700736AC4 /* ShowByPageRequestTests.swift */; };
 		77E7FDE426E3AF5C00736AC4 /* ShowByPageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */; };
+		77E7FDE626E3B02000736AC4 /* ShowBySearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */; };
+		77E7FDE826E3B09F00736AC4 /* ShowBySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -133,6 +135,8 @@
 		77E7FDDF26E39B2500736AC4 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		77E7FDE126E3A93700736AC4 /* ShowByPageRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByPageRequestTests.swift; sourceTree = "<group>"; };
 		77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByPageRequest.swift; sourceTree = "<group>"; };
+		77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBySearchRequestTests.swift; sourceTree = "<group>"; };
+		77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBySearchRequest.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -410,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				77E7FDD826E2C5DA00736AC4 /* Request.swift */,
+				77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */,
 				77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */,
 			);
 			path = Request;
@@ -419,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				77E7FDDF26E39B2500736AC4 /* RequestTests.swift */,
+				77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */,
 				77E7FDE126E3A93700736AC4 /* ShowByPageRequestTests.swift */,
 			);
 			path = Request;
@@ -676,6 +682,7 @@
 				775AAAE826E1724500770E38 /* HTTPError.swift in Sources */,
 				777900FC26E0285C007C21F2 /* Schedule.swift in Sources */,
 				77E7FDDB26E39A2000736AC4 /* HTTPMethod.swift in Sources */,
+				77E7FDE826E3B09F00736AC4 /* ShowBySearchRequest.swift in Sources */,
 				7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */,
 				777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */,
 				7738994926E16AE6001AD239 /* FetchShowByIdUseCase.swift in Sources */,
@@ -686,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E7FDE626E3B02000736AC4 /* ShowBySearchRequestTests.swift in Sources */,
 				7779010626E02EF4007C21F2 /* TVNetworkTests.swift in Sources */,
 				7779011726E0E029007C21F2 /* ShowTests.swift in Sources */,
 				7779011526E0DE8E007C21F2 /* WebChannelTests.swift in Sources */,
