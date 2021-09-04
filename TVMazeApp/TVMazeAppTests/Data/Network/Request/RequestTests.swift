@@ -10,9 +10,9 @@ import XCTest
 
 class RequestTests: XCTestCase {
 
-    func testRequest_asURLRequestWithHeaderAndBody_ShouldReturnAValidURLRequest() {
+    func testRequest_asURLRequestWithAllProperties_ShouldReturnAValidURLRequest() {
         // Arrange
-        let sut = MockRequest(body: ["AnyBody": "body"],
+        let sut = MockRequest(params: ["AnyParam": "param"], body: ["AnyBody": "body"],
                               headers: ["AnyHeader": "header"])
 
         // Act
@@ -20,7 +20,7 @@ class RequestTests: XCTestCase {
 
         // Assert
         XCTAssertNotNil(urlRequest)
-        XCTAssertEqual(urlRequest?.url?.absoluteString, "http://google.com")
+        XCTAssertEqual(urlRequest?.url?.absoluteString, "http://google.com?AnyParam=param")
         XCTAssertNotNil(urlRequest?.httpBody)
         XCTAssertNotNil(urlRequest?.allHTTPHeaderFields)
         XCTAssertEqual(urlRequest?.allHTTPHeaderFields?["Content-Type"], "application/json")
@@ -30,7 +30,7 @@ class RequestTests: XCTestCase {
 
     func testRequest_asURLRequestWithoutHeaderAndBody_ShouldReturnAValidURLRequest() {
         // Arrange
-        let sut = MockRequest(body: nil, headers: nil)
+        let sut = MockRequest(params: nil, body: nil, headers: nil)
 
         // Act
         let urlRequest = sut.asURLRequest()
@@ -50,6 +50,7 @@ class RequestTests: XCTestCase {
         let baseURL: String = "http://google.com"
         let method: HTTPMethod = .get
         let contentType: String = "application/json"
+        let params: [String: Any]?
         let body: [String: Any]?
         let headers: [String: String]?
     }
