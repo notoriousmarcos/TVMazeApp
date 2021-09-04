@@ -56,6 +56,8 @@
 		77E7FDE426E3AF5C00736AC4 /* ShowByPageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */; };
 		77E7FDE626E3B02000736AC4 /* ShowBySearchRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */; };
 		77E7FDE826E3B09F00736AC4 /* ShowBySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */; };
+		77E7FDEA26E3B1B700736AC4 /* ShowByIdRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDE926E3B1B700736AC4 /* ShowByIdRequestTests.swift */; };
+		77E7FDEC26E3B23D00736AC4 /* ShowByIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +139,8 @@
 		77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByPageRequest.swift; sourceTree = "<group>"; };
 		77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBySearchRequestTests.swift; sourceTree = "<group>"; };
 		77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBySearchRequest.swift; sourceTree = "<group>"; };
+		77E7FDE926E3B1B700736AC4 /* ShowByIdRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByIdRequestTests.swift; sourceTree = "<group>"; };
+		77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowByIdRequest.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 			children = (
 				77E7FDD826E2C5DA00736AC4 /* Request.swift */,
 				77E7FDE726E3B09F00736AC4 /* ShowBySearchRequest.swift */,
+				77E7FDEB26E3B23D00736AC4 /* ShowByIdRequest.swift */,
 				77E7FDE326E3AF5C00736AC4 /* ShowByPageRequest.swift */,
 			);
 			path = Request;
@@ -425,6 +430,7 @@
 			children = (
 				77E7FDDF26E39B2500736AC4 /* RequestTests.swift */,
 				77E7FDE526E3B02000736AC4 /* ShowBySearchRequestTests.swift */,
+				77E7FDE926E3B1B700736AC4 /* ShowByIdRequestTests.swift */,
 				77E7FDE126E3A93700736AC4 /* ShowByPageRequestTests.swift */,
 			);
 			path = Request;
@@ -663,6 +669,7 @@
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
 				775AAAE726E1724500770E38 /* HTTPClient.swift in Sources */,
 				7779010426E02EA6007C21F2 /* Externals.swift in Sources */,
+				77E7FDEC26E3B23D00736AC4 /* ShowByIdRequest.swift in Sources */,
 				7738994726E16A91001AD239 /* FetchShowBySearchTermUseCase.swift in Sources */,
 				7779011F26E0E627007C21F2 /* ShowLink.swift in Sources */,
 				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
@@ -701,6 +708,7 @@
 				777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */,
 				7779010226E02E0E007C21F2 /* ExternalsTests.swift in Sources */,
 				7779011B26E0E5AB007C21F2 /* LinkTests.swift in Sources */,
+				77E7FDEA26E3B1B700736AC4 /* ShowByIdRequestTests.swift in Sources */,
 				7779010826E02F61007C21F2 /* CountryTests.swift in Sources */,
 				7738995126E16F0D001AD239 /* DomainErrorTests.swift in Sources */,
 				775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */,
