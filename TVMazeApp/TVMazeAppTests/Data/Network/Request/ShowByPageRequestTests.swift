@@ -18,7 +18,7 @@ class ShowByPageRequestTests: XCTestCase {
         XCTAssertEqual(sut.baseURL, "https://api.tvmaze.com/shows")
         XCTAssertEqual(sut.method, .get)
         XCTAssertEqual(sut.contentType, "application/json")
-        XCTAssertEqual(sut.params as? [String : String], ["page": "1"])
+        XCTAssertEqual(sut.params as? [String: String], ["page": "1"])
         XCTAssertNil(sut.body)
         XCTAssertNil(sut.headers)
     }

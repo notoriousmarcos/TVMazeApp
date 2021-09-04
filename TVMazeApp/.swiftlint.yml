@@ -1,6 +1,9 @@
 disabled_rules:
   - nesting
 
+switch_case_alignment:
+  indented_cases: true
+
 identifier_name:
   excluded: # excluded via string array
     - id

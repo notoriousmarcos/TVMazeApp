@@ -19,7 +19,7 @@ public class RemoteFetchShowByPageUseCase: FetchShowByPageUseCase {
     }
 
     public func execute(page: Int) -> AnyPublisher<[Show], DomainError> {
-        httpClient.dispatch(request: request).mapError { error -> DomainError in
+        httpClient.dispatch(request: request).mapError { _ -> DomainError in
             return .dataNotFound
         }.eraseToAnyPublisher()
     }
