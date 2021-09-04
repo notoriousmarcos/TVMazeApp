@@ -100,6 +100,38 @@ class ShowsViewModelTests: XCTestCase {
         cancellable.cancel()
     }
 
+    func testShowsViewModel_onAppearWithError_ShouldCallfetchShowError() {
+        // Arrange
+        let expectedStatesBehaviour: [ShowsState] = [
+            .idle,
+            .loading,
+            .error(message: "The operation couldn’t be completed. (TVMazeApp.DomainError error 1.)")
+        ]
+        var fetchByPageCount = 0
+        var statesBehaviour: [ShowsState] = []
+        let sut = ShowsViewModel(findShows: { show in
+            self.makeSuccessPublisher(forValue: [MockEntities.show])
+        }, fetchShowsByPage: { page in
+            fetchByPageCount += 1
+            XCTAssertEqual(page, 0)
+            return self.makeFailPublisher(forError: .fetchError)
+        }, fetchShowById: { _ in
+            self.makeSuccessPublisher(forValue: MockEntities.show)
+        })
+
+        let cancellable = sut.$state.sink { state in
+            statesBehaviour.append(state)
+        }
+
+        // Act
+        sut.onAppear()
+
+        // Assert
+        XCTAssertEqual(fetchByPageCount, 1)
+        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        cancellable.cancel()
+    }
+
     private func makeSuccessPublisher<T>(forValue value: T) -> AnyPublisher<T, DomainError> {
         return Just(value)
             .setFailureType(to: DomainError.self)
