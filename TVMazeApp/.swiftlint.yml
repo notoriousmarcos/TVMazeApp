@@ -1,5 +1,7 @@
 disabled_rules:
   - nesting
+  - type_name
+  - large_tuple
 
 switch_case_alignment:
   indented_cases: true

@@ -362,6 +362,7 @@
 				777900EC26E025B6007C21F2 /* Domain */,
 				77E7FDFF26E3CE2D00736AC4 /* Infra */,
 				77E7FE1526E3F88A00736AC4 /* UseCaseIntegration */,
+				77E7FE2426E3FD3300736AC4 /* Presenter */,
 				777900D526E023E2007C21F2 /* Info.plist */,
 			);
 			path = TVMazeAppTests;
@@ -519,6 +520,13 @@
 				77E7FE2226E3FC1A00736AC4 /* RemoteFetchEpisodesByShowUseCaseIntegrationTests.swift */,
 			);
 			path = UseCaseIntegration;
+			sourceTree = "<group>";
+		};
+		77E7FE2426E3FD3300736AC4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		AAA726A2A57D1B70B8490A65 /* Frameworks */ = {
