@@ -16,9 +16,7 @@ class ShowsViewModelTests: XCTestCase {
         let expectedStatesBehaviour: [ShowsState] = [.idle, .loading, .loaded(shows: [MockEntities.show])]
         var fetchByPageCount = 0
         var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { show in
-            self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { page in
+        let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageCount += 1
             XCTAssertEqual(page, 0)
             return self.makeSuccessPublisher(forValue: [MockEntities.show])
@@ -48,9 +46,7 @@ class ShowsViewModelTests: XCTestCase {
         ]
         var fetchByPageCount = 0
         var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { show in
-            self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { page in
+        let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageCount += 1
             XCTAssertEqual(page, 0)
             return self.makeFailPublisher(forError: .fetchError)
@@ -82,9 +78,7 @@ class ShowsViewModelTests: XCTestCase {
         ]
         var fetchByPageBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { show in
-            self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { page in
+        let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageBehaviour.append(page)
             return self.makeSuccessPublisher(forValue: [MockEntities.show])
         }, fetchShowById: { _ in
@@ -105,68 +99,6 @@ class ShowsViewModelTests: XCTestCase {
         cancellable.cancel()
     }
 
-    func testShowsViewModel_searchTerm_ShouldCallfetchShows() {
-        // Arrange
-        let expectedStatesBehaviour: [ShowsState] = [
-            .idle,
-            .loading,
-            .loaded(shows: [MockEntities.show])
-        ]
-        var findBehaviour: [String] = []
-        var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { searchTerm in
-            findBehaviour.append(searchTerm)
-            return self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { _ in
-            return self.makeSuccessPublisher(forValue: [])
-        }, fetchShowById: { _ in
-            self.makeSuccessPublisher(forValue: MockEntities.show)
-        })
-
-        let cancellable = sut.$state.sink { state in
-            statesBehaviour.append(state)
-        }
-
-        // Act
-        sut.search("search")
-
-        // Assert
-        XCTAssertEqual(findBehaviour, ["search"])
-        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
-        cancellable.cancel()
-    }
-
-    func testShowsViewModel_searchTermWithError_ShouldCallfetchShowError() {
-        // Arrange
-        let expectedStatesBehaviour: [ShowsState] = [
-            .idle,
-            .loading,
-            .error(message: "The operation couldn’t be completed. (TVMazeApp.DomainError error 1.)")
-        ]
-        var findBehaviour: [String] = []
-        var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { searchTerm in
-            findBehaviour.append(searchTerm)
-            return self.makeFailPublisher(forError: .fetchError)
-        }, fetchShowsByPage: { _ in
-            return self.makeSuccessPublisher(forValue: [])
-        }, fetchShowById: { _ in
-            self.makeSuccessPublisher(forValue: MockEntities.show)
-        })
-
-        let cancellable = sut.$state.sink { state in
-            statesBehaviour.append(state)
-        }
-
-        // Act
-        sut.search("search")
-
-        // Assert
-        XCTAssertEqual(findBehaviour, ["search"])
-        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
-        cancellable.cancel()
-    }
-
     func testShowsViewModel_open_ShouldCallfetchShow() {
         // Arrange
         let expectedStatesBehaviour: [ShowsState] = [
@@ -176,9 +108,7 @@ class ShowsViewModelTests: XCTestCase {
         ]
         var openBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { _ in
-            return self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { _ in
+        let sut = ShowsViewModel(fetchShowsByPage: { _ in
             return self.makeSuccessPublisher(forValue: [])
         }, fetchShowById: { showId in
             openBehaviour.append(showId)
@@ -207,9 +137,7 @@ class ShowsViewModelTests: XCTestCase {
         ]
         var openBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
-        let sut = ShowsViewModel(findShows: { _ in
-            return self.makeSuccessPublisher(forValue: [MockEntities.show])
-        }, fetchShowsByPage: { _ in
+        let sut = ShowsViewModel(fetchShowsByPage: { _ in
             return self.makeSuccessPublisher(forValue: [])
         }, fetchShowById: { showId in
             openBehaviour.append(showId)

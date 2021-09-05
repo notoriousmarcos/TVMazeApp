@@ -7,43 +7,45 @@
 
 import Combine
 
-public protocol ShowsViewModelProtocol: ObservableObject {
-    typealias FetchShowsByPage = (Int) -> AnyPublisher<[Show], DomainError>
+public protocol SearchShowsViewModelProtocol: ObservableObject {
+    typealias FindShows = (String) -> AnyPublisher<[Show], DomainError>
     typealias FetchShowById = (Int) -> AnyPublisher<Show, DomainError>
 
     var state: ShowsState { get }
-    var page: Int { get }
 
-    func onAppear()
-    func nextPage()
+    func search(_ search: String)
     func open(show: Show)
 }
 
-public final class ShowsViewModel: ShowsViewModelProtocol {
+public final class SearchShowsViewModel: SearchShowsViewModelProtocol {
 
-    private let fetchShowsByPage: FetchShowsByPage
+    private let findShows: FindShows
     private let fetchShowById: FetchShowById
     private var cancellables = Set<AnyCancellable>()
 
     @Published public var state: ShowsState = .idle
-    public var page: Int = 0
 
     public init(
-        fetchShowsByPage: @escaping FetchShowsByPage,
+        findShows: @escaping FindShows,
         fetchShowById: @escaping FetchShowById
     ) {
-        self.fetchShowsByPage = fetchShowsByPage
+        self.findShows = findShows
         self.fetchShowById = fetchShowById
 
     }
 
-    public func onAppear() {
-        fetchShows(page: page)
-    }
-
-    public func nextPage() {
-        page += 1
-        fetchShows(page: page)
+    public func search(_ search: String) {
+        state = .loading
+        findShows(search).sink { [weak self] result in
+            switch result {
+                case .failure(let error):
+                    self?.state = .error(message: error.localizedDescription)
+                case .finished:
+                    break
+            }
+        } receiveValue: { [weak self] shows in
+            self?.state = .loaded(shows: shows)
+        }.store(in: &cancellables)
     }
 
     public func open(show: Show) {
@@ -57,20 +59,6 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
             }
         } receiveValue: { [weak self] show in
             self?.state = .open(show: show)
-        }.store(in: &cancellables)
-    }
-
-    private func fetchShows(page: Int) {
-        state = .loading
-        fetchShowsByPage(page).sink { [weak self] result in
-            switch result {
-                case .failure(let error):
-                    self?.state = .error(message: error.localizedDescription)
-                case .finished:
-                    break
-            }
-        } receiveValue: { [weak self] shows in
-            self?.state = .loaded(shows: shows)
         }.store(in: &cancellables)
     }
 }
