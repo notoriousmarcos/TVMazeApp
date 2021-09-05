@@ -13,15 +13,15 @@ class ShowsViewModelTests: XCTestCase {
 
     func testShowsViewModel_onAppear_ShouldCallfetchShowsByPageZero() {
         // Arrange
-        let expectedStatesBehaviour: [ShowsState] = [.idle, .loading, .loaded(shows: [MockEntities.show])]
+        let expectedStatesBehaviour: [ShowsState] = [.idle, .loading, .loaded(shows: [Mocks.show])]
         var fetchByPageCount = 0
         var statesBehaviour: [ShowsState] = []
         let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageCount += 1
             XCTAssertEqual(page, 0)
-            return self.makeSuccessPublisher(forValue: [MockEntities.show])
+            return Mocks.makeSuccessPublisher(forValue: [Mocks.show])
         }, fetchShowById: { _ in
-            self.makeSuccessPublisher(forValue: MockEntities.show)
+            Mocks.makeSuccessPublisher(forValue: Mocks.show)
         })
 
         let cancellable = sut.$state.sink { state in
@@ -49,9 +49,9 @@ class ShowsViewModelTests: XCTestCase {
         let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageCount += 1
             XCTAssertEqual(page, 0)
-            return self.makeFailPublisher(forError: .fetchError)
+            return Mocks.makeFailPublisher(forError: .fetchError)
         }, fetchShowById: { _ in
-            self.makeSuccessPublisher(forValue: MockEntities.show)
+            Mocks.makeSuccessPublisher(forValue: Mocks.show)
         })
 
         let cancellable = sut.$state.sink { state in
@@ -72,17 +72,17 @@ class ShowsViewModelTests: XCTestCase {
         let expectedStatesBehaviour: [ShowsState] = [
             .idle,
             .loading,
-            .loaded(shows: [MockEntities.show]),
+            .loaded(shows: [Mocks.show]),
             .loading,
-            .loaded(shows: [MockEntities.show])
+            .loaded(shows: [Mocks.show])
         ]
         var fetchByPageBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
         let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageBehaviour.append(page)
-            return self.makeSuccessPublisher(forValue: [MockEntities.show])
+            return Mocks.makeSuccessPublisher(forValue: [Mocks.show])
         }, fetchShowById: { _ in
-            self.makeSuccessPublisher(forValue: MockEntities.show)
+            Mocks.makeSuccessPublisher(forValue: Mocks.show)
         })
 
         let cancellable = sut.$state.sink { state in
@@ -104,15 +104,15 @@ class ShowsViewModelTests: XCTestCase {
         let expectedStatesBehaviour: [ShowsState] = [
             .idle,
             .loading,
-            .open(show: MockEntities.show)
+            .open(show: Mocks.show)
         ]
         var openBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
         let sut = ShowsViewModel(fetchShowsByPage: { _ in
-            return self.makeSuccessPublisher(forValue: [])
+            return Mocks.makeSuccessPublisher(forValue: [])
         }, fetchShowById: { showId in
             openBehaviour.append(showId)
-            return self.makeSuccessPublisher(forValue: MockEntities.show)
+            return Mocks.makeSuccessPublisher(forValue: Mocks.show)
         })
 
         let cancellable = sut.$state.sink { state in
@@ -120,7 +120,7 @@ class ShowsViewModelTests: XCTestCase {
         }
 
         // Act
-        sut.open(show: MockEntities.show)
+        sut.open(show: Mocks.show)
 
         // Assert
         XCTAssertEqual(openBehaviour, [1])
@@ -138,10 +138,10 @@ class ShowsViewModelTests: XCTestCase {
         var openBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
         let sut = ShowsViewModel(fetchShowsByPage: { _ in
-            return self.makeSuccessPublisher(forValue: [])
+            return Mocks.makeSuccessPublisher(forValue: [])
         }, fetchShowById: { showId in
             openBehaviour.append(showId)
-            return self.makeFailPublisher(forError: .fetchError)
+            return Mocks.makeFailPublisher(forError: .fetchError)
         })
 
         let cancellable = sut.$state.sink { state in
@@ -149,22 +149,11 @@ class ShowsViewModelTests: XCTestCase {
         }
 
         // Act
-        sut.open(show: MockEntities.show)
+        sut.open(show: Mocks.show)
 
         // Assert
         XCTAssertEqual(openBehaviour, [1])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
         cancellable.cancel()
-    }
-
-    private func makeSuccessPublisher<T>(forValue value: T) -> AnyPublisher<T, DomainError> {
-        return Just(value)
-            .setFailureType(to: DomainError.self)
-            .eraseToAnyPublisher()
-    }
-
-    private func makeFailPublisher<T>(forError error: DomainError) -> AnyPublisher<T, DomainError> {
-        return Fail(error: error)
-            .eraseToAnyPublisher()
     }
 }

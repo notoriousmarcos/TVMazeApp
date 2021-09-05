@@ -18,7 +18,7 @@ class RemoteFetchEpisodesByShowUseCaseIntegrationTests: XCTestCase {
 
         let exp = expectation(description: "Waiting request")
         // Act
-        let cancellable = sut.execute(show: MockEntities.show).sink { _ in
+        let cancellable = sut.execute(show: Mocks.show).sink { _ in
             exp.fulfill()
         } receiveValue: { episodes in
             XCTAssertFalse(episodes.isEmpty)

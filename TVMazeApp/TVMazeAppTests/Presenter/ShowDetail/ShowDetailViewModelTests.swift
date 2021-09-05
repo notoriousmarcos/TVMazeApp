@@ -13,14 +13,14 @@ class ShowDetailViewModelTests: XCTestCase {
 
     func testShowViewModel_onAppear_ShouldCallfetchEpisodes() {
         // Arrange
-        let expectedStatesBehaviour: [ShowDetailState] = [.idle, .loading, .loaded(episodes: [MockEntities.episode])]
+        let expectedStatesBehaviour: [ShowDetailState] = [.idle, .loading, .loaded(episodes: [Mocks.episode])]
         var fetchEpisodesCount = 0
         var statesBehaviour: [ShowDetailState] = []
         let sut = ShowDetailViewModel(
-            show: MockEntities.show) { show in
+            show: Mocks.show) { show in
             fetchEpisodesCount += 1
-            XCTAssertEqual(show, MockEntities.show)
-            return self.makeSuccessPublisher(forValue: [MockEntities.episode])
+            XCTAssertEqual(show, Mocks.show)
+            return Mocks.makeSuccessPublisher(forValue: [Mocks.episode])
         }
 
         let cancellable = sut.$state.sink { state in
@@ -46,10 +46,10 @@ class ShowDetailViewModelTests: XCTestCase {
         var fetchEpisodesCount = 0
         var statesBehaviour: [ShowDetailState] = []
         let sut = ShowDetailViewModel(
-            show: MockEntities.show) { show in
+            show: Mocks.show) { show in
             fetchEpisodesCount += 1
-            XCTAssertEqual(show, MockEntities.show)
-            return self.makeFailPublisher(forError: .fetchError)
+            XCTAssertEqual(show, Mocks.show)
+            return Mocks.makeFailPublisher(forError: .fetchError)
         }
 
         let cancellable = sut.$state.sink { state in
@@ -63,16 +63,5 @@ class ShowDetailViewModelTests: XCTestCase {
         XCTAssertEqual(fetchEpisodesCount, 1)
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
         cancellable.cancel()
-    }
-
-    private func makeSuccessPublisher<T>(forValue value: T) -> AnyPublisher<T, DomainError> {
-        return Just(value)
-            .setFailureType(to: DomainError.self)
-            .eraseToAnyPublisher()
-    }
-
-    private func makeFailPublisher<T>(forError error: DomainError) -> AnyPublisher<T, DomainError> {
-        return Fail(error: error)
-            .eraseToAnyPublisher()
     }
 }

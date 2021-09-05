@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 @testable import TVMazeApp
 
-struct MockEntities {
+struct Mocks {
     static let show = Show(
         id: 1,
         url: "https://www.tvmaze.com/shows/3/bitten",
@@ -83,4 +84,15 @@ struct MockEntities {
             previousepisode: nil
         )
     )
+
+    static func makeSuccessPublisher<T>(forValue value: T) -> AnyPublisher<T, DomainError> {
+        return Just(value)
+            .setFailureType(to: DomainError.self)
+            .eraseToAnyPublisher()
+    }
+
+    static func makeFailPublisher<T>(forError error: DomainError) -> AnyPublisher<T, DomainError> {
+        return Fail(error: error)
+            .eraseToAnyPublisher()
+    }
 }

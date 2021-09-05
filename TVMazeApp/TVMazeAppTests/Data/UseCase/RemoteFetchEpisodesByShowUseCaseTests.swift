@@ -14,11 +14,11 @@ class RemoteFetchEpisodesByShowUseCaseTests: XCTestCase {
 
     func testRemoteFetchEpisodesByShowUseCase_executeWithValidData_ShouldReturnEpisodes() {
         // Arrange
-        mockClient.result = [MockEntities.episode]
+        mockClient.result = [Mocks.episode]
         let sut = RemoteFetchEpisodesByShowUseCase(httpClient: mockClient)
 
         // Act
-        let cancellable = sut.execute(show: MockEntities.show).sink { result in
+        let cancellable = sut.execute(show: Mocks.show).sink { result in
             switch result {
                 case .failure:
                     XCTFail("Should Not Fail.")
@@ -27,7 +27,7 @@ class RemoteFetchEpisodesByShowUseCaseTests: XCTestCase {
             }
         } receiveValue: { shows in
             // Assert
-            XCTAssertEqual(shows, [MockEntities.episode])
+            XCTAssertEqual(shows, [Mocks.episode])
         }
 
         cancellable.cancel()
@@ -39,7 +39,7 @@ class RemoteFetchEpisodesByShowUseCaseTests: XCTestCase {
         let sut = RemoteFetchEpisodesByShowUseCase(httpClient: mockClient)
 
         // Act
-        let cancellable = sut.execute(show: MockEntities.show).sink { result in
+        let cancellable = sut.execute(show: Mocks.show).sink { result in
             switch result {
                 case .failure(let error):
                     XCTAssertEqual(error, .fetchError)
