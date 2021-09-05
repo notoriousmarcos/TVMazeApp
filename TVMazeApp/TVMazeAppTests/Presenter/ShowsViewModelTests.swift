@@ -14,6 +14,7 @@ public enum ShowsState: Equatable {
     case loaded(shows: [Show])
     case loading
     case error(message: String)
+    case open(show: Show)
 }
 
 public protocol ShowsViewModelProtocol: ObservableObject {
@@ -75,7 +76,17 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     }
 
     public func open(show: Show) {
-
+        state = .loading
+        fetchShowById(show.id).sink { [weak self] result in
+            switch result {
+                case .failure(let error):
+                    self?.state = .error(message: error.localizedDescription)
+                case .finished:
+                    break
+            }
+        } receiveValue: { [weak self] show in
+            self?.state = .open(show: show)
+        }.store(in: &cancellables)
     }
 
     private func fetchShows(page: Int) {
@@ -216,6 +227,37 @@ class ShowsViewModelTests: XCTestCase {
 
         // Assert
         XCTAssertEqual(findBehaviour, ["search"])
+        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        cancellable.cancel()
+    }
+
+    func testShowsViewModel_open_ShouldCallfetchShow() {
+        // Arrange
+        let expectedStatesBehaviour: [ShowsState] = [
+            .idle,
+            .loading,
+            .open(show: MockEntities.show)
+        ]
+        var openBehaviour: [Int] = []
+        var statesBehaviour: [ShowsState] = []
+        let sut = ShowsViewModel(findShows: { _ in
+            return self.makeSuccessPublisher(forValue: [MockEntities.show])
+        }, fetchShowsByPage: { _ in
+            return self.makeSuccessPublisher(forValue: [])
+        }, fetchShowById: { showId in
+            openBehaviour.append(showId)
+            return self.makeSuccessPublisher(forValue: MockEntities.show)
+        })
+
+        let cancellable = sut.$state.sink { state in
+            statesBehaviour.append(state)
+        }
+
+        // Act
+        sut.open(show: MockEntities.show)
+
+        // Assert
+        XCTAssertEqual(openBehaviour, [1])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
         cancellable.cancel()
     }
