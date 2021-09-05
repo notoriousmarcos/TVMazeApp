@@ -24,7 +24,7 @@ class RemoteFetchShowByIdUseCaseIntegrationTests: XCTestCase {
             XCTAssertNotNil(show)
         }
 
-        wait(for: [exp], timeout: 5)
+        wait(for: [exp], timeout: 15)
         cancellable.cancel()
     }
 }

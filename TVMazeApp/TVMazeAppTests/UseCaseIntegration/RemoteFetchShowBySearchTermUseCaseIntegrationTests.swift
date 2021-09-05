@@ -24,7 +24,7 @@ class RemoteFetchShowBySearchTermUseCaseIntegrationTests: XCTestCase {
             XCTAssertFalse(shows.isEmpty)
         }
 
-        wait(for: [exp], timeout: 5)
+        wait(for: [exp], timeout: 15)
         cancellable.cancel()
     }
 }

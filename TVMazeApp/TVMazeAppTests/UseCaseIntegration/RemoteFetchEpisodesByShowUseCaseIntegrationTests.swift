@@ -24,7 +24,7 @@ class RemoteFetchEpisodesByShowUseCaseIntegrationTests: XCTestCase {
             XCTAssertFalse(episodes.isEmpty)
         }
 
-        wait(for: [exp], timeout: 5)
+        wait(for: [exp], timeout: 15)
         cancellable.cancel()
     }
 }
