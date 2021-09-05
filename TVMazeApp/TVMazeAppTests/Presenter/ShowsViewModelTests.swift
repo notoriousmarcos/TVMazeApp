@@ -54,12 +54,29 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     public func onAppear() {
         fetchShows(page: page)
     }
+
     public func nextPage() {
         page += 1
         fetchShows(page: page)
     }
-    public func search(_ search: String) {}
-    public func open(show: Show) {}
+
+    public func search(_ search: String) {
+        state = .loading
+        findShows(search).sink { [weak self] result in
+            switch result {
+                case .failure(let error):
+                    self?.state = .error(message: error.localizedDescription)
+                case .finished:
+                    break
+            }
+        } receiveValue: { [weak self] shows in
+            self?.state = .loaded(shows: shows)
+        }.store(in: &cancellables)
+    }
+
+    public func open(show: Show) {
+
+    }
 
     private func fetchShows(page: Int) {
         state = .loading
@@ -168,6 +185,37 @@ class ShowsViewModelTests: XCTestCase {
 
         // Assert
         XCTAssertEqual(fetchByPageBehaviour, [0, 1])
+        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        cancellable.cancel()
+    }
+
+    func testShowsViewModel_searchTerm_ShouldCallfetchShows() {
+        // Arrange
+        let expectedStatesBehaviour: [ShowsState] = [
+            .idle,
+            .loading,
+            .loaded(shows: [MockEntities.show])
+        ]
+        var findBehaviour: [String] = []
+        var statesBehaviour: [ShowsState] = []
+        let sut = ShowsViewModel(findShows: { searchTerm in
+            findBehaviour.append(searchTerm)
+            return self.makeSuccessPublisher(forValue: [MockEntities.show])
+        }, fetchShowsByPage: { _ in
+            return self.makeSuccessPublisher(forValue: [])
+        }, fetchShowById: { _ in
+            self.makeSuccessPublisher(forValue: MockEntities.show)
+        })
+
+        let cancellable = sut.$state.sink { state in
+            statesBehaviour.append(state)
+        }
+
+        // Act
+        sut.search("search")
+
+        // Assert
+        XCTAssertEqual(findBehaviour, ["search"])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
         cancellable.cancel()
     }
