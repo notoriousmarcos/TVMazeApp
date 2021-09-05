@@ -52,8 +52,18 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     }
 
     public func onAppear() {
+        fetchShows(page: page)
+    }
+    public func nextPage() {
+        page += 1
+        fetchShows(page: page)
+    }
+    public func search(_ search: String) {}
+    public func open(show: Show) {}
+
+    private func fetchShows(page: Int) {
         state = .loading
-        fetchShowsByPage(0).sink { [weak self] result in
+        fetchShowsByPage(page).sink { [weak self] result in
             switch result {
                 case .failure(let error):
                     self?.state = .error(message: error.localizedDescription)
@@ -63,11 +73,7 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
         } receiveValue: { [weak self] shows in
             self?.state = .loaded(shows: shows)
         }.store(in: &cancellables)
-
     }
-    public func nextPage() {}
-    public func search(_ search: String) {}
-    public func open(show: Show) {}
 }
 
 class ShowsViewModelTests: XCTestCase {
@@ -128,6 +134,40 @@ class ShowsViewModelTests: XCTestCase {
 
         // Assert
         XCTAssertEqual(fetchByPageCount, 1)
+        XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        cancellable.cancel()
+    }
+
+    func testShowsViewModel_nextPage_ShouldCallfetchShows() {
+        // Arrange
+        let expectedStatesBehaviour: [ShowsState] = [
+            .idle,
+            .loading,
+            .loaded(shows: [MockEntities.show]),
+            .loading,
+            .loaded(shows: [MockEntities.show])
+        ]
+        var fetchByPageBehaviour: [Int] = []
+        var statesBehaviour: [ShowsState] = []
+        let sut = ShowsViewModel(findShows: { show in
+            self.makeSuccessPublisher(forValue: [MockEntities.show])
+        }, fetchShowsByPage: { page in
+            fetchByPageBehaviour.append(page)
+            return self.makeSuccessPublisher(forValue: [MockEntities.show])
+        }, fetchShowById: { _ in
+            self.makeSuccessPublisher(forValue: MockEntities.show)
+        })
+
+        let cancellable = sut.$state.sink { state in
+            statesBehaviour.append(state)
+        }
+
+        // Act
+        sut.onAppear()
+        sut.nextPage()
+
+        // Assert
+        XCTAssertEqual(fetchByPageBehaviour, [0, 1])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
         cancellable.cancel()
     }
