@@ -7,21 +7,21 @@
 
 import Combine
 
-public protocol ShowViewModelProtocol: ObservableObject {
+public protocol ShowDetailViewModelProtocol: ObservableObject {
     typealias FetchEpisodesByShow = (Show) -> AnyPublisher<[Episode], DomainError>
 
-    var state: ShowState { get }
+    var state: ShowDetailState { get }
     var show: Show { get }
 
     func onAppear()
 }
 
-public final class ShowViewModel: ShowViewModelProtocol {
+public final class ShowDetailViewModel: ShowDetailViewModelProtocol {
 
     private let fetchEpisodesByShow: FetchEpisodesByShow
     private var cancellables = Set<AnyCancellable>()
 
-    @Published public var state: ShowState = .idle
+    @Published public var state: ShowDetailState = .idle
     public let show: Show
 
     public init(

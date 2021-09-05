@@ -9,14 +9,14 @@ import Combine
 import XCTest
 @testable import TVMazeApp
 
-class ShowViewModelTests: XCTestCase {
+class ShowDetailViewModelTests: XCTestCase {
 
     func testShowViewModel_onAppear_ShouldCallfetchEpisodes() {
         // Arrange
-        let expectedStatesBehaviour: [ShowState] = [.idle, .loading, .loaded(episodes: [MockEntities.episode])]
+        let expectedStatesBehaviour: [ShowDetailState] = [.idle, .loading, .loaded(episodes: [MockEntities.episode])]
         var fetchEpisodesCount = 0
-        var statesBehaviour: [ShowState] = []
-        let sut = ShowViewModel(
+        var statesBehaviour: [ShowDetailState] = []
+        let sut = ShowDetailViewModel(
             show: MockEntities.show) { show in
             fetchEpisodesCount += 1
             XCTAssertEqual(show, MockEntities.show)
@@ -38,14 +38,14 @@ class ShowViewModelTests: XCTestCase {
 
     func testShowViewModel_onAppearWithError_ShouldCallfetchShowError() {
         // Arrange
-        let expectedStatesBehaviour: [ShowState] = [
+        let expectedStatesBehaviour: [ShowDetailState] = [
             .idle,
             .loading,
             .error(message: "The operation couldn’t be completed. (TVMazeApp.DomainError error 1.)")
         ]
         var fetchEpisodesCount = 0
-        var statesBehaviour: [ShowState] = []
-        let sut = ShowViewModel(
+        var statesBehaviour: [ShowDetailState] = []
+        let sut = ShowDetailViewModel(
             show: MockEntities.show) { show in
             fetchEpisodesCount += 1
             XCTAssertEqual(show, MockEntities.show)

@@ -78,9 +78,9 @@
 		77F55B6A26E4ECCE00E492F1 /* ShowsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B6926E4ECCE00E492F1 /* ShowsState.swift */; };
 		77F55B6E26E4F06700E492F1 /* SearchShowsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B6D26E4F06700E492F1 /* SearchShowsViewModelTests.swift */; };
 		77F55B7026E4F12C00E492F1 /* SearchShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B6F26E4F12C00E492F1 /* SearchShowsViewModel.swift */; };
-		77F55B7226E4F34800E492F1 /* ShowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7126E4F34800E492F1 /* ShowViewModelTests.swift */; };
-		77F55B7526E4FC5000E492F1 /* ShowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7426E4FC5000E492F1 /* ShowState.swift */; };
-		77F55B7726E4FC7A00E492F1 /* ShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7626E4FC7A00E492F1 /* ShowViewModel.swift */; };
+		77F55B7226E4F34800E492F1 /* ShowDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7126E4F34800E492F1 /* ShowDetailViewModelTests.swift */; };
+		77F55B7526E4FC5000E492F1 /* ShowDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7426E4FC5000E492F1 /* ShowDetailState.swift */; };
+		77F55B7726E4FC7A00E492F1 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7626E4FC7A00E492F1 /* ShowDetailViewModel.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -184,9 +184,9 @@
 		77F55B6926E4ECCE00E492F1 /* ShowsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsState.swift; sourceTree = "<group>"; };
 		77F55B6D26E4F06700E492F1 /* SearchShowsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowsViewModelTests.swift; sourceTree = "<group>"; };
 		77F55B6F26E4F12C00E492F1 /* SearchShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowsViewModel.swift; sourceTree = "<group>"; };
-		77F55B7126E4F34800E492F1 /* ShowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewModelTests.swift; sourceTree = "<group>"; };
-		77F55B7426E4FC5000E492F1 /* ShowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowState.swift; sourceTree = "<group>"; };
-		77F55B7626E4FC7A00E492F1 /* ShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewModel.swift; sourceTree = "<group>"; };
+		77F55B7126E4F34800E492F1 /* ShowDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModelTests.swift; sourceTree = "<group>"; };
+		77F55B7426E4FC5000E492F1 /* ShowDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailState.swift; sourceTree = "<group>"; };
+		77F55B7626E4FC7A00E492F1 /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -543,9 +543,8 @@
 		77E7FE2426E3FD3300736AC4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				77F55B6D26E4F06700E492F1 /* SearchShowsViewModelTests.swift */,
-				77F55B7126E4F34800E492F1 /* ShowViewModelTests.swift */,
-				77E7FE2526E3FE6600736AC4 /* ShowsViewModelTests.swift */,
+				77F55B7926E4FD8200E492F1 /* Shows */,
+				77F55B7826E4FD7300E492F1 /* ShowDetail */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -553,7 +552,7 @@
 		77F55B6526E4EC7300E492F1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				77F55B7326E4FC3C00E492F1 /* Show */,
+				77F55B7326E4FC3C00E492F1 /* ShowDetail */,
 				77F55B6826E4ECBC00E492F1 /* Shows */,
 			);
 			path = Presenter;
@@ -576,13 +575,30 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		77F55B7326E4FC3C00E492F1 /* Show */ = {
+		77F55B7326E4FC3C00E492F1 /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
-				77F55B7426E4FC5000E492F1 /* ShowState.swift */,
-				77F55B7626E4FC7A00E492F1 /* ShowViewModel.swift */,
+				77F55B7426E4FC5000E492F1 /* ShowDetailState.swift */,
+				77F55B7626E4FC7A00E492F1 /* ShowDetailViewModel.swift */,
 			);
-			path = Show;
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		77F55B7826E4FD7300E492F1 /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				77F55B7126E4F34800E492F1 /* ShowDetailViewModelTests.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		77F55B7926E4FD8200E492F1 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				77F55B6D26E4F06700E492F1 /* SearchShowsViewModelTests.swift */,
+				77E7FE2526E3FE6600736AC4 /* ShowsViewModelTests.swift */,
+			);
+			path = Shows;
 			sourceTree = "<group>";
 		};
 		AAA726A2A57D1B70B8490A65 /* Frameworks */ = {
@@ -843,10 +859,10 @@
 				77E7FDE426E3AF5C00736AC4 /* ShowByPageRequest.swift in Sources */,
 				77F55B7026E4F12C00E492F1 /* SearchShowsViewModel.swift in Sources */,
 				775AAAE826E1724500770E38 /* HTTPError.swift in Sources */,
-				77F55B7526E4FC5000E492F1 /* ShowState.swift in Sources */,
+				77F55B7526E4FC5000E492F1 /* ShowDetailState.swift in Sources */,
 				777900FC26E0285C007C21F2 /* Schedule.swift in Sources */,
 				77E7FDDB26E39A2000736AC4 /* HTTPMethod.swift in Sources */,
-				77F55B7726E4FC7A00E492F1 /* ShowViewModel.swift in Sources */,
+				77F55B7726E4FC7A00E492F1 /* ShowDetailViewModel.swift in Sources */,
 				77E7FDE826E3B09F00736AC4 /* ShowBySearchRequest.swift in Sources */,
 				7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */,
 				777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */,
@@ -864,7 +880,7 @@
 				7779010626E02EF4007C21F2 /* TVNetworkTests.swift in Sources */,
 				7779011726E0E029007C21F2 /* ShowTests.swift in Sources */,
 				7779011526E0DE8E007C21F2 /* WebChannelTests.swift in Sources */,
-				77F55B7226E4F34800E492F1 /* ShowViewModelTests.swift in Sources */,
+				77F55B7226E4F34800E492F1 /* ShowDetailViewModelTests.swift in Sources */,
 				77E7FE1F26E3FB1D00736AC4 /* RemoteFetchShowBySearchTermUseCaseIntegrationTests.swift in Sources */,
 				77E7FDE226E3A93700736AC4 /* ShowByPageRequestTests.swift in Sources */,
 				77E7FE2326E3FC1A00736AC4 /* RemoteFetchEpisodesByShowUseCaseIntegrationTests.swift in Sources */,

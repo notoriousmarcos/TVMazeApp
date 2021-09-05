@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ShowState: Equatable {
+public enum ShowDetailState: Equatable {
     case idle
     case loaded(episodes: [Episode])
     case loading
