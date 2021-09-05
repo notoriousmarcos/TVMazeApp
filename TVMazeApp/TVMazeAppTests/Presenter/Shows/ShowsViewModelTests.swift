@@ -13,6 +13,7 @@ class ShowsViewModelTests: XCTestCase {
 
     func testShowsViewModel_onAppear_ShouldCallfetchShowsByPageZero() {
         // Arrange
+        let expectedShows: [Show] = [Mocks.show]
         let expectedStatesBehaviour: [ShowsState] = [.idle, .loading, .loaded(shows: [Mocks.show])]
         var fetchByPageCount = 0
         var statesBehaviour: [ShowsState] = []
@@ -34,6 +35,7 @@ class ShowsViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(fetchByPageCount, 1)
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        XCTAssertEqual(sut.shows, expectedShows)
         cancellable.cancel()
     }
 
@@ -69,6 +71,7 @@ class ShowsViewModelTests: XCTestCase {
 
     func testShowsViewModel_nextPage_ShouldCallfetchShows() {
         // Arrange
+        let expectedShows: [Show] = [Mocks.show, Mocks.show]
         let expectedStatesBehaviour: [ShowsState] = [
             .idle,
             .loading,
@@ -96,6 +99,7 @@ class ShowsViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(fetchByPageBehaviour, [0, 1])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        XCTAssertEqual(sut.shows, expectedShows)
         cancellable.cancel()
     }
 

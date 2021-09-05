@@ -81,6 +81,12 @@
 		77F55B7226E4F34800E492F1 /* ShowDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7126E4F34800E492F1 /* ShowDetailViewModelTests.swift */; };
 		77F55B7526E4FC5000E492F1 /* ShowDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7426E4FC5000E492F1 /* ShowDetailState.swift */; };
 		77F55B7726E4FC7A00E492F1 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7626E4FC7A00E492F1 /* ShowDetailViewModel.swift */; };
+		77F55B7C26E4FFBA00E492F1 /* ShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7B26E4FFBA00E492F1 /* ShowsView.swift */; };
+		77F55B7E26E5341D00E492F1 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B7D26E5341D00E492F1 /* ShowCell.swift */; };
+		77F55B8526E537FD00E492F1 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B8426E537FD00E492F1 /* AsyncImage.swift */; };
+		77F55B8726E5394D00E492F1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B8626E5394D00E492F1 /* ImageLoader.swift */; };
+		77F55B8926E5397F00E492F1 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B8826E5397F00E492F1 /* ImageCache.swift */; };
+		77F55B8B26E539BE00E492F1 /* EnviromentValuesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F55B8A26E539BE00E492F1 /* EnviromentValuesExtension.swift */; };
 		A698A756C7BB6AE3C57CC37D /* Pods_TVMazeApp_TVMazeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287BC641A80AF2C48D3341 /* Pods_TVMazeApp_TVMazeAppUITests.framework */; };
 		BDD5A60599CB23FFD388E271 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FFDA279E005348F1C109C /* Pods_TVMazeApp.framework */; };
 /* End PBXBuildFile section */
@@ -187,6 +193,12 @@
 		77F55B7126E4F34800E492F1 /* ShowDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModelTests.swift; sourceTree = "<group>"; };
 		77F55B7426E4FC5000E492F1 /* ShowDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailState.swift; sourceTree = "<group>"; };
 		77F55B7626E4FC7A00E492F1 /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		77F55B7B26E4FFBA00E492F1 /* ShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsView.swift; sourceTree = "<group>"; };
+		77F55B7D26E5341D00E492F1 /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		77F55B8426E537FD00E492F1 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		77F55B8626E5394D00E492F1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		77F55B8826E5397F00E492F1 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		77F55B8A26E539BE00E492F1 /* EnviromentValuesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentValuesExtension.swift; sourceTree = "<group>"; };
 		8EF12870C971DA348737221A /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50077ED564E61ED3FA67554 /* Pods-TVMazeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TVMazeApp-TVMazeAppUITests/Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -571,6 +583,8 @@
 		77F55B6C26E4EF5F00E492F1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				77F55B8226E537DC00E492F1 /* BaseViews */,
+				77F55B7A26E4FF2300E492F1 /* Shows */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -599,6 +613,34 @@
 				77E7FE2526E3FE6600736AC4 /* ShowsViewModelTests.swift */,
 			);
 			path = Shows;
+			sourceTree = "<group>";
+		};
+		77F55B7A26E4FF2300E492F1 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				77F55B7B26E4FFBA00E492F1 /* ShowsView.swift */,
+				77F55B7D26E5341D00E492F1 /* ShowCell.swift */,
+			);
+			path = Shows;
+			sourceTree = "<group>";
+		};
+		77F55B8226E537DC00E492F1 /* BaseViews */ = {
+			isa = PBXGroup;
+			children = (
+				77F55B8326E537EA00E492F1 /* Image */,
+			);
+			path = BaseViews;
+			sourceTree = "<group>";
+		};
+		77F55B8326E537EA00E492F1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				77F55B8426E537FD00E492F1 /* AsyncImage.swift */,
+				77F55B8826E5397F00E492F1 /* ImageCache.swift */,
+				77F55B8A26E539BE00E492F1 /* EnviromentValuesExtension.swift */,
+				77F55B8626E5394D00E492F1 /* ImageLoader.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		AAA726A2A57D1B70B8490A65 /* Frameworks */ = {
@@ -831,7 +873,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F55B8526E537FD00E492F1 /* AsyncImage.swift in Sources */,
 				777900F326E025F1007C21F2 /* Model.swift in Sources */,
+				77F55B7C26E4FFBA00E492F1 /* ShowsView.swift in Sources */,
 				775AAAE726E1724500770E38 /* HTTPClient.swift in Sources */,
 				77F55B6726E4EC9100E492F1 /* ShowsViewModel.swift in Sources */,
 				7779010426E02EA6007C21F2 /* Externals.swift in Sources */,
@@ -841,7 +885,10 @@
 				7779011F26E0E627007C21F2 /* ShowLink.swift in Sources */,
 				77E7FDFE26E3C8FB00736AC4 /* RemoteFetchEpisodesByShowUseCase.swift in Sources */,
 				7779011326E0DE3C007C21F2 /* WebChannel.swift in Sources */,
+				77F55B8926E5397F00E492F1 /* ImageCache.swift in Sources */,
 				77F55B6A26E4ECCE00E492F1 /* ShowsState.swift in Sources */,
+				77F55B8B26E539BE00E492F1 /* EnviromentValuesExtension.swift in Sources */,
+				77F55B7E26E5341D00E492F1 /* ShowCell.swift in Sources */,
 				7738994E26E16E30001AD239 /* DomainError.swift in Sources */,
 				77E7FE1326E3CF2400736AC4 /* NativeHTTPClient.swift in Sources */,
 				7779012126E0E63E007C21F2 /* Show.swift in Sources */,
@@ -862,6 +909,7 @@
 				77F55B7526E4FC5000E492F1 /* ShowDetailState.swift in Sources */,
 				777900FC26E0285C007C21F2 /* Schedule.swift in Sources */,
 				77E7FDDB26E39A2000736AC4 /* HTTPMethod.swift in Sources */,
+				77F55B8726E5394D00E492F1 /* ImageLoader.swift in Sources */,
 				77F55B7726E4FC7A00E492F1 /* ShowDetailViewModel.swift in Sources */,
 				77E7FDE826E3B09F00736AC4 /* ShowBySearchRequest.swift in Sources */,
 				7779010026E02DA4007C21F2 /* ShowImage.swift in Sources */,
@@ -986,7 +1034,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1041,7 +1089,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1062,7 +1110,7 @@
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TVMazeApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1085,7 +1133,7 @@
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TVMazeApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1106,7 +1154,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = TVMazeAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1129,7 +1177,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = TVMazeAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

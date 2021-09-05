@@ -12,6 +12,7 @@ public protocol SearchShowsViewModelProtocol: ObservableObject {
     typealias FetchShowById = (Int) -> AnyPublisher<Show, DomainError>
 
     var state: ShowsState { get }
+    var shows: [Show] { get }
 
     func search(_ search: String)
     func open(show: Show)
@@ -24,6 +25,7 @@ public final class SearchShowsViewModel: SearchShowsViewModelProtocol {
     private var cancellables = Set<AnyCancellable>()
 
     @Published public var state: ShowsState = .idle
+    @Published public var shows: [Show] = []
 
     public init(
         findShows: @escaping FindShows,
@@ -44,6 +46,7 @@ public final class SearchShowsViewModel: SearchShowsViewModelProtocol {
                     break
             }
         } receiveValue: { [weak self] shows in
+            self?.shows += shows
             self?.state = .loaded(shows: shows)
         }.store(in: &cancellables)
     }

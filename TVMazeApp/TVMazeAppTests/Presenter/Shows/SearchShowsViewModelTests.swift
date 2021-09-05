@@ -13,6 +13,7 @@ class SearchShowsViewModelTests: XCTestCase {
 
     func testSearchShowsViewModel_searchTerm_ShouldCallfetchShows() {
         // Arrange
+        let expectedShows: [Show] = [Mocks.show]
         let expectedStatesBehaviour: [ShowsState] = [
             .idle,
             .loading,
@@ -37,6 +38,7 @@ class SearchShowsViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(findBehaviour, ["search"])
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        XCTAssertEqual(sut.shows, expectedShows)
         cancellable.cancel()
     }
 

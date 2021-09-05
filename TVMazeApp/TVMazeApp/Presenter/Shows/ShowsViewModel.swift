@@ -12,6 +12,7 @@ public protocol ShowsViewModelProtocol: ObservableObject {
     typealias FetchShowById = (Int) -> AnyPublisher<Show, DomainError>
 
     var state: ShowsState { get }
+    var shows: [Show] { get }
     var page: Int { get }
 
     func onAppear()
@@ -26,6 +27,7 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     private var cancellables = Set<AnyCancellable>()
 
     @Published public var state: ShowsState = .idle
+    @Published public var shows: [Show] = []
     public var page: Int = 0
 
     public init(
@@ -70,6 +72,7 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
                     break
             }
         } receiveValue: { [weak self] shows in
+            self?.shows += shows
             self?.state = .loaded(shows: shows)
         }.store(in: &cancellables)
     }

@@ -13,6 +13,7 @@ class ShowDetailViewModelTests: XCTestCase {
 
     func testShowViewModel_onAppear_ShouldCallfetchEpisodes() {
         // Arrange
+        let expectedEpisodes: [Episode] = [Mocks.episode]
         let expectedStatesBehaviour: [ShowDetailState] = [.idle, .loading, .loaded(episodes: [Mocks.episode])]
         var fetchEpisodesCount = 0
         var statesBehaviour: [ShowDetailState] = []
@@ -33,6 +34,7 @@ class ShowDetailViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(fetchEpisodesCount, 1)
         XCTAssertEqual(statesBehaviour, expectedStatesBehaviour)
+        XCTAssertEqual(sut.episodes, expectedEpisodes)
         cancellable.cancel()
     }
 
