@@ -16,7 +16,9 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
         NavigationView {
             list(of: viewModel.shows)
                 .navigationBarTitle("Shows", displayMode: .large)
-        }
+        }.onAppear(perform: {
+            viewModel.onAppear()
+        })
     }
 
     private func list(of shows: [Show]) -> some View {

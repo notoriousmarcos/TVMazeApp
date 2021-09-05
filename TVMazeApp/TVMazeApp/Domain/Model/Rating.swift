@@ -8,5 +8,5 @@
 import Foundation
 
 public struct Rating: Model {
-    public let average: Double
+    public let average: Double?
 }

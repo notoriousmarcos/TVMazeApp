@@ -21,6 +21,7 @@ class RemoteFetchShowByPageUseCaseIntegrationTests: XCTestCase {
         let cancellable = sut.execute(page: 0).sink { _ in
             exp.fulfill()
         } receiveValue: { shows in
+            print(shows)
             XCTAssertFalse(shows.isEmpty)
         }
 

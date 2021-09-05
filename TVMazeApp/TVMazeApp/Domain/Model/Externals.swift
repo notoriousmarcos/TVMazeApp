@@ -8,6 +8,6 @@
 import Foundation
 
 public struct Externals: Model {
-    public let tvrage, thetvdb: Int
-    public let imdb: String
+    public let tvrage, thetvdb: Int?
+    public let imdb: String?
 }

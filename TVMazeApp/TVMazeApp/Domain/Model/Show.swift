@@ -40,17 +40,17 @@ public struct Show: Model {
     public let language: String
     public let genres: [String]
     public let status: String
-    public let runtime: Int
+    public let runtime: Int?
     public let averageRuntime: Int
     public let premiered: String
-    public let officialSite: String
+    public let officialSite: String?
     public let schedule: Schedule
-    public let rating: Rating
+    public let rating: Rating?
     public let weight: Int
-    public let network: TVNetwork
+    public let network: TVNetwork?
     public let webChannel: WebChannel?
     public let dvdCountry: String?
-    public let externals: Externals
+    public let externals: Externals?
     public let image: ShowImage
     public let summary: String
     public let updated: Int

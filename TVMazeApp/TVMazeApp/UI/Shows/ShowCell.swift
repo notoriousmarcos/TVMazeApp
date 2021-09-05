@@ -25,7 +25,7 @@ struct ShowCell: View {
             VStack(alignment: .leading) {
                 Text(model.name)
                     .font(.headline)
-                Text(getSummary(model.summary))
+                Text(model.summary)
                     .lineLimit(4)
                     .font(.subheadline)
             }

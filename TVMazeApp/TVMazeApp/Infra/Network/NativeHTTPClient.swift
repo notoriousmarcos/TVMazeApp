@@ -32,6 +32,7 @@ public class NativeHTTPClient: HTTPClient {
                 }
                 return error
             }
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 
