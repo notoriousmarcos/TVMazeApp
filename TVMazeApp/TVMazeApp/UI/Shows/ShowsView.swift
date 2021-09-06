@@ -22,10 +22,13 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
     }
 
     private func list(of shows: [Show]) -> some View {
-        return List(shows, id: \.id) { show in
+        let showsWithIndex = shows.enumerated().map { $0 }
+        return List(showsWithIndex, id: \.element.id) { index, show in
             ShowCell(model: show) { show in
                 viewModel.open(show: show)
-            }
+            }.onAppear(perform: {
+                viewModel.nextPageIdNeeded(index)
+            })
             //            NavigationLink(
             //                destination: MovieDetailView(viewModel: MovieDetailViewModel(movieID: movie.id)),
             //                label: { MovieListItemView(movie: movie) }

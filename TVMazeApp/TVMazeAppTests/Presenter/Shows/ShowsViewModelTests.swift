@@ -71,19 +71,20 @@ class ShowsViewModelTests: XCTestCase {
 
     func testShowsViewModel_nextPage_ShouldCallfetchShows() {
         // Arrange
-        let expectedShows: [Show] = [Mocks.show, Mocks.show]
+        let expectedShows: [Show] = [Show](repeating: Mocks.show, count: 32)
         let expectedStatesBehaviour: [ShowsState] = [
             .idle,
             .loading,
-            .loaded(shows: [Mocks.show]),
+            .loaded(shows: [Show](repeating: Mocks.show, count: 16)),
             .loading,
-            .loaded(shows: [Mocks.show])
+            .loaded(shows: [Show](repeating: Mocks.show, count: 16))
         ]
         var fetchByPageBehaviour: [Int] = []
         var statesBehaviour: [ShowsState] = []
         let sut = ShowsViewModel(fetchShowsByPage: { page in
             fetchByPageBehaviour.append(page)
-            return Mocks.makeSuccessPublisher(forValue: [Mocks.show])
+            let shows = [Show](repeating: Mocks.show, count: 16)
+            return Mocks.makeSuccessPublisher(forValue: shows)
         }, fetchShowById: { _ in
             Mocks.makeSuccessPublisher(forValue: Mocks.show)
         })
@@ -94,7 +95,8 @@ class ShowsViewModelTests: XCTestCase {
 
         // Act
         sut.onAppear()
-        sut.nextPage()
+        sut.nextPageIdNeeded(1)
+        sut.nextPageIdNeeded(9)
 
         // Assert
         XCTAssertEqual(fetchByPageBehaviour, [0, 1])

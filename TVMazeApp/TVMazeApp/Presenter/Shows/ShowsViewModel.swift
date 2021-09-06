@@ -16,7 +16,7 @@ public protocol ShowsViewModelProtocol: ObservableObject {
     var page: Int { get }
 
     func onAppear()
-    func nextPage()
+    func nextPageIdNeeded(_ currentPosition: Int)
     func open(show: Show)
 }
 
@@ -43,7 +43,10 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
         fetchShows(page: page)
     }
 
-    public func nextPage() {
+    public func nextPageIdNeeded(_ currentPosition: Int) {
+        guard currentPosition > shows.count - 8 else {
+            return
+        }
         page += 1
         fetchShows(page: page)
     }
