@@ -16,7 +16,7 @@ class Main {
     private let fetchEpisodesByShow = RemoteFetchEpisodesByShowUseCase(httpClient: NativeHTTPClient())
 
     func makeShowsView() -> some View {
-        ShowsViewFactory(fetchShowsByPageUseCase: fetchShowsByPage, fetchShowsByIdUseCase: fetchShowsById).make()
+        ShowsViewFactory(fetchShowsByPageUseCase: fetchShowsByPage).make()
     }
 }
 

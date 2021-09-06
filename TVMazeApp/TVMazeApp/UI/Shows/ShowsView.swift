@@ -113,11 +113,6 @@ struct ShowsView_Previews: PreviewProvider {
                     return Just([show])
                         .setFailureType(to: DomainError.self)
                         .eraseToAnyPublisher()
-                },
-                fetchShowById: { _ -> AnyPublisher<Show, DomainError> in
-                    return Just(show)
-                        .setFailureType(to: DomainError.self)
-                        .eraseToAnyPublisher()
                 }
             )
         )

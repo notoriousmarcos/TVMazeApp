@@ -61,7 +61,6 @@ public final class SearchShowsViewModel: SearchShowsViewModelProtocol {
                     break
             }
         } receiveValue: { [weak self] show in
-            self?.state = .open(show: show)
         }.store(in: &cancellables)
     }
 }

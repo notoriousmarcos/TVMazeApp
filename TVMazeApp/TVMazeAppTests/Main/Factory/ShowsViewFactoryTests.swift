@@ -14,8 +14,7 @@ class ShowsViewFactoryTests: XCTestCase {
     func testShowsViewFactory_factory_ShouldReturnShowsView() {
         // Arrange
         let sut = ShowsViewFactory(
-            fetchShowsByPageUseCase: RemoteFetchShowByPageUseCase(httpClient: NativeHTTPClient()),
-            fetchShowsByIdUseCase: RemoteFetchShowByIdUseCase(httpClient: NativeHTTPClient()))
+            fetchShowsByPageUseCase: RemoteFetchShowByPageUseCase(httpClient: NativeHTTPClient()))
 
         // Act
         let view = sut.make()

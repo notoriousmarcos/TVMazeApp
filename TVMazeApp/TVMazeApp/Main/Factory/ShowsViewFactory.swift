@@ -11,20 +11,14 @@ import SwiftUI
 struct ShowsViewFactory {
 
     let fetchShowsByPageUseCase: FetchShowByPageUseCase
-    let fetchShowsByIdUseCase: FetchShowByIdUseCase
 
-    init(
-        fetchShowsByPageUseCase: FetchShowByPageUseCase,
-        fetchShowsByIdUseCase: FetchShowByIdUseCase
-    ) {
+    init(fetchShowsByPageUseCase: FetchShowByPageUseCase) {
         self.fetchShowsByPageUseCase = fetchShowsByPageUseCase
-        self.fetchShowsByIdUseCase = fetchShowsByIdUseCase
     }
 
     func make() -> some View {
         let viewModel = ShowsViewModel(
-            fetchShowsByPage: fetchShowsByPageUseCase.execute(page:),
-            fetchShowById: fetchShowsByIdUseCase.execute(id:)
+            fetchShowsByPage: fetchShowsByPageUseCase.execute(page:)
         )
         return ShowsView(viewModel: viewModel)
     }
