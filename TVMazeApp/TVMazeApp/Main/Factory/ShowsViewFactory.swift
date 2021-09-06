@@ -8,7 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct ShowsViewFactory {
+protocol ShowsViewFactoryProtocol {
+    associatedtype Model: ShowsViewModelProtocol
+    func make() -> ShowsView<Model>
+}
+
+struct ShowsViewFactory: ShowsViewFactoryProtocol {
 
     let fetchShowsByPageUseCase: FetchShowByPageUseCase
 
@@ -16,7 +21,7 @@ struct ShowsViewFactory {
         self.fetchShowsByPageUseCase = fetchShowsByPageUseCase
     }
 
-    func make() -> some View {
+    func make() -> ShowsView<ShowsViewModel> {
         let viewModel = ShowsViewModel(
             fetchShowsByPage: fetchShowsByPageUseCase.execute(page:)
         )

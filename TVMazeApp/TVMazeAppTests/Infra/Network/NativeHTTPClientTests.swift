@@ -84,7 +84,7 @@ class NativeHTTPClientTests: XCTestCase {
             XCTAssertEqual(response["response"], "value")
         }
 
-        wait(for: [exp], timeout: 1)
+        wait(for: [exp], timeout: 2)
         cancellable.cancel()
     }
 

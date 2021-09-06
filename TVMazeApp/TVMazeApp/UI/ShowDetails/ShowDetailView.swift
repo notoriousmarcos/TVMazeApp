@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-struct ShowsDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
+struct ShowDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
     @ObservedObject var viewModel: Model
     @State private var showingAlert = false
 
@@ -157,7 +157,7 @@ struct ShowsDetailsView_Previews: PreviewProvider {
             )
         )
 
-        return ShowsDetailView(
+        return ShowDetailView(
             viewModel: ShowDetailViewModel(
                 show: show,
                 fetchShowById: { _ -> AnyPublisher<Show, DomainError> in
