@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ShowCell: View {
     var model: Show
-    var open: (Show) -> Void
 
     var body: some View {
         HStack(spacing: 8) {
@@ -106,8 +105,7 @@ struct ShowCell_Previews: PreviewProvider {
                     previousepisode: Link(
                         href: "https://api.tvmaze.com/episodes/631862"
                     )
-                )),
-            open: { _ in }
+                ))
         ).previewLayout(.sizeThatFits)
     }
 }

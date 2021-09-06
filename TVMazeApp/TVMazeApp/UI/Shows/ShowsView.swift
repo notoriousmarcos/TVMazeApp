@@ -8,8 +8,10 @@
 import Combine
 import SwiftUI
 
-struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
-    @ObservedObject var viewModel: Model
+struct ShowsView<ShowsModel: ShowsViewModelProtocol, ShowDetailViewModel: ShowDetailViewModelProtocol>: View {
+    @ObservedObject var viewModel: ShowsModel
+    var openShow: (Show) -> ShowDetailView<ShowDetailViewModel>
+
     @State private var showingAlert = false
 
     var body: some View {
@@ -32,15 +34,15 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
     private func list(of shows: [Show]) -> some View {
         let showsWithIndex = shows.enumerated().map { $0 }
         return List(showsWithIndex, id: \.element.id) { index, show in
-            ShowCell(model: show) { show in
-                viewModel.open(show: show)
-            }.onAppear(perform: {
-                viewModel.nextPageIdNeeded(index)
-            })
-            //            NavigationLink(
-            //                destination: MovieDetailView(viewModel: MovieDetailViewModel(movieID: movie.id)),
-            //                label: { MovieListItemView(movie: movie) }
-            //            )
+            NavigationLink(
+                destination: openShow(show),
+                label: {
+                    ShowCell(model: show)
+                        .onAppear(perform: {
+                        viewModel.nextPageIdNeeded(index)
+                    })
+                }
+            )
         }
     }
 
@@ -107,14 +109,30 @@ struct ShowsView_Previews: PreviewProvider {
                 )
             )
         )
-        return ShowsView(
+        return ShowsView<ShowsViewModel, ShowDetailViewModel>(
             viewModel: ShowsViewModel(
                 fetchShowsByPage: { _ -> AnyPublisher<[Show], DomainError> in
                     return Just([show])
                         .setFailureType(to: DomainError.self)
                         .eraseToAnyPublisher()
                 }
-            )
+            ), openShow: { show in
+                ShowDetailView(
+                    viewModel: ShowDetailViewModel(
+                        show: show,
+                        fetchShowById: { _ -> AnyPublisher<Show, DomainError> in
+                            return Just(show)
+                                .setFailureType(to: DomainError.self)
+                                .eraseToAnyPublisher()
+                        },
+                        fetchEpisodesByShow: { _ -> AnyPublisher<[Episode], DomainError> in
+                            return Just([])
+                                .setFailureType(to: DomainError.self)
+                                .eraseToAnyPublisher()
+                        }
+                    )
+                )
+            }
         )
     }
 }

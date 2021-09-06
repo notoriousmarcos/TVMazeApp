@@ -9,11 +9,15 @@ import Foundation
 import SwiftUI
 
 protocol ShowsViewFactoryProtocol {
-    associatedtype Model: ShowsViewModelProtocol
-    func make() -> ShowsView<Model>
+    associatedtype ShowsViewModel: ShowsViewModelProtocol
+    associatedtype ShowDetailViewModel: ShowDetailViewModelProtocol
+    associatedtype SomeView: View
+    typealias OpenShowAction = (Show) -> SomeView
+    func make(openShowAction: @escaping OpenShowAction) -> ShowsView<ShowsViewModel, ShowDetailViewModel>
 }
 
 struct ShowsViewFactory: ShowsViewFactoryProtocol {
+    typealias SomeView = ShowDetailView<ShowDetailViewModel>
 
     let fetchShowsByPageUseCase: FetchShowByPageUseCase
 
@@ -21,10 +25,13 @@ struct ShowsViewFactory: ShowsViewFactoryProtocol {
         self.fetchShowsByPageUseCase = fetchShowsByPageUseCase
     }
 
-    func make() -> ShowsView<ShowsViewModel> {
+    func make(openShowAction: @escaping OpenShowAction) -> ShowsView<ShowsViewModel, ShowDetailViewModel> {
         let viewModel = ShowsViewModel(
             fetchShowsByPage: fetchShowsByPageUseCase.execute(page:)
         )
-        return ShowsView(viewModel: viewModel)
+        return ShowsView<ShowsViewModel, ShowDetailViewModel>(
+            viewModel: viewModel,
+            openShow: openShowAction
+        )
     }
 }
