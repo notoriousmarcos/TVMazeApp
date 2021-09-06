@@ -76,7 +76,6 @@ class ShowsViewModelTests: XCTestCase {
             .idle,
             .loading,
             .loaded(shows: [Show](repeating: Mocks.show, count: 16)),
-            .loading,
             .loaded(shows: [Show](repeating: Mocks.show, count: 16))
         ]
         var fetchByPageBehaviour: [Int] = []

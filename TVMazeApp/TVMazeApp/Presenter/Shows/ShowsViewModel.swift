@@ -40,6 +40,7 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     }
 
     public func onAppear() {
+        state = .loading
         fetchShows(page: page)
     }
 
@@ -66,7 +67,6 @@ public final class ShowsViewModel: ShowsViewModelProtocol {
     }
 
     private func fetchShows(page: Int) {
-        state = .loading
         fetchShowsByPage(page).sink { [weak self] result in
             switch result {
                 case .failure(let error):

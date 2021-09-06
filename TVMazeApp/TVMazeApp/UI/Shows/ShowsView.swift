@@ -14,8 +14,16 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
 
     var body: some View {
         NavigationView {
-            list(of: viewModel.shows)
-                .navigationBarTitle("Shows", displayMode: .large)
+            switch viewModel.state {
+                case .idle:
+                    Color.clear
+                case .loading:
+                    loadingView()
+                default:
+                    list(of: viewModel.shows)
+                        .navigationBarTitle("Shows", displayMode: .large)
+            }
+
         }.onAppear(perform: {
             viewModel.onAppear()
         })
@@ -38,7 +46,7 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
 
     func loadingView() -> some View {
         ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            .progressViewStyle(CircularProgressViewStyle(tint: .primary))
             .scaleEffect(1)
             .padding()
     }

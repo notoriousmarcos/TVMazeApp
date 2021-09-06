@@ -12,5 +12,4 @@ public enum ShowsState: Equatable {
     case loaded(shows: [Show])
     case loading
     case error(message: String)
-    case open(show: Show)
 }
