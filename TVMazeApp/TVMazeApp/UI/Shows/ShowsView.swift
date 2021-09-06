@@ -44,7 +44,7 @@ struct ShowsView<Model>: View where Model: ShowsViewModelProtocol {
         }
     }
 
-    func loadingView() -> some View {
+    private func loadingView() -> some View {
         ProgressView()
             .progressViewStyle(CircularProgressViewStyle(tint: .primary))
             .scaleEffect(1)
