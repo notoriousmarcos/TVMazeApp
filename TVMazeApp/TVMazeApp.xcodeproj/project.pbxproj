@@ -786,6 +786,7 @@
 					};
 					777900D926E023E2007C21F2 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 777900BD26E023DF007C21F2;
 					};
 				};
@@ -1256,6 +1257,7 @@
 			baseConfigurationReference = 4D2A81164F9563E030909999 /* Pods-TVMazeApp-TVMazeAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = TVMazeAppUITests/Info.plist;
@@ -1266,6 +1268,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcosvcbrito.TVMazeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TVMazeApp;
@@ -1277,6 +1280,7 @@
 			baseConfigurationReference = CC43713F0F65355F2D39B657 /* Pods-TVMazeApp-TVMazeAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = TVMazeAppUITests/Info.plist;
