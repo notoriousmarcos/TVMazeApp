@@ -20,11 +20,12 @@ struct ShowDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
                 case .loading:
                     loadingView()
                 default:
-                    list(of: viewModel.episodes, forShow: viewModel.show)
-                        .navigationBarTitle("Shows", displayMode: .large)
+                    mainView(of: viewModel.episodes, forShow: viewModel.show)
             }
 
-        }.onAppear(perform: {
+        }
+        .navigationBarTitle(viewModel.show.name, displayMode: .inline)
+        .onAppear(perform: {
             viewModel.onAppear()
         })
     }
@@ -35,8 +36,9 @@ struct ShowDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
                 AsyncImage(
                     url: showImageURL,
                     placeholder: { Text("Loading...") },
-                    image: { Image(uiImage: $0).resizable() }
+                    image: { Image(uiImage: $0) }
                 )
+                .scaledToFit()
                 .frame(idealHeight: 300, alignment: .center)
             }
             Text(show.name)
@@ -47,16 +49,20 @@ struct ShowDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
                 .multilineTextAlignment(.center)
                 .lineLimit(50)
         }.padding()
-        .navigationBarTitle(Text(show.name), displayMode: .inline)
     }
 
-    private func list(of episodes: [Episode], forShow show: Show) -> some View {
-        return List {
-            Section(header: showHeader(show)) {
-                ForEach(episodes, id: \.id) { episode in
-                    EpisodeCell(model: episode)
-                }
+    private func mainView(of episodes: [Episode], forShow show: Show) -> some View {
+        ScrollView {
+            LazyVStack {
+                showHeader(show)
+                list(of: episodes)
             }
+        }
+    }
+
+    private func list(of episodes: [Episode]) -> some View {
+        return ForEach(episodes, id: \.id) { episode in
+            EpisodeCell(model: episode)
         }
     }
 
@@ -65,17 +71,6 @@ struct ShowDetailView<Model>: View where Model: ShowDetailViewModelProtocol {
             .progressViewStyle(CircularProgressViewStyle(tint: .primary))
             .scaleEffect(1)
             .padding()
-    }
-
-    private func getSummary(_ summary: String) -> String {
-        let data = summary.data(using: .utf8)!
-        let attributtedSummary = try? NSAttributedString(
-            data: data,
-            options: [.documentType: NSAttributedString.DocumentType.html],
-            documentAttributes: nil
-        ).string
-
-        return attributtedSummary ?? summary
     }
 }
 

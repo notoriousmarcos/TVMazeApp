@@ -38,17 +38,6 @@ struct ShowCell: View {
         .padding(8)
 
     }
-
-    private func getSummary(_ summary: String) -> String {
-        let data = summary.data(using: .utf8)!
-        let attributtedSummary = try? NSAttributedString(
-            data: data,
-            options: [.documentType: NSAttributedString.DocumentType.html],
-            documentAttributes: nil
-        ).string
-
-        return attributtedSummary ?? summary
-    }
 }
 
 struct ShowCell_Previews: PreviewProvider {

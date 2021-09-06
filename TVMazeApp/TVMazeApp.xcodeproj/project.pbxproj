@@ -19,7 +19,6 @@
 		775AAAEC26E1750B00770E38 /* HTTPErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAEB26E174C700770E38 /* HTTPErrorTests.swift */; };
 		775AAAF126E1791B00770E38 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAAF026E1791B00770E38 /* MockHTTPClient.swift */; };
 		777900C226E023DF007C21F2 /* TVMazeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C126E023DF007C21F2 /* TVMazeAppApp.swift */; };
-		777900C426E023DF007C21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900C326E023DF007C21F2 /* ContentView.swift */; };
 		777900C626E023E2007C21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C526E023E2007C21F2 /* Assets.xcassets */; };
 		777900C926E023E2007C21F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 777900C826E023E2007C21F2 /* Preview Assets.xcassets */; };
 		777900EF26E025D6007C21F2 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777900EE26E025D6007C21F2 /* ModelTests.swift */; };
@@ -132,7 +131,6 @@
 		775AAAF026E1791B00770E38 /* MockHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		777900BE26E023DF007C21F2 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777900C126E023DF007C21F2 /* TVMazeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppApp.swift; sourceTree = "<group>"; };
-		777900C326E023DF007C21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		777900C526E023E2007C21F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		777900C826E023E2007C21F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		777900CA26E023E2007C21F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 				77E7FE0326E3CF2400736AC4 /* Infra */,
 				77F55B6526E4EC7300E492F1 /* Presenter */,
 				77F55B6C26E4EF5F00E492F1 /* UI */,
-				777900C326E023DF007C21F2 /* ContentView.swift */,
 				777900C526E023E2007C21F2 /* Assets.xcassets */,
 				777900CA26E023E2007C21F2 /* Info.plist */,
 				777900C726E023E2007C21F2 /* Preview Content */,
@@ -960,7 +957,6 @@
 				77E7FDF026E3B4B700736AC4 /* EpisodesByShowRequest.swift in Sources */,
 				77E7FDD626E2B57200736AC4 /* RemoteFetchShowByPageUseCase.swift in Sources */,
 				777900F826E027CA007C21F2 /* Episode.swift in Sources */,
-				777900C426E023DF007C21F2 /* ContentView.swift in Sources */,
 				7779010A26E02F8E007C21F2 /* Country.swift in Sources */,
 				7779010C26E03047007C21F2 /* TVNetwork.swift in Sources */,
 				7738994526E16942001AD239 /* FetchShowByPageUseCase.swift in Sources */,
